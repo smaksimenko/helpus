@@ -1,0 +1,13 @@
+*.class
+*.log
+*.db
+target
+
+# Intellij IDEA project #
+*.iml
+.idea
+
+# Package Files #
+*.jar
+*.war
+*.ear

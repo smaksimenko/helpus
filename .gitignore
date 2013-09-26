@@ -5,7 +5,7 @@ target
 
 # Intellij IDEA project #
 *.iml
-.idea
+.idea/*
 
 # Package Files #
 *.jar

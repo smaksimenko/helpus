@@ -12,8 +12,8 @@ var AppRouter = Backbone.Router.extend({
             prevText: '&#x3c;Пред',
             nextText: 'След&#x3e;',
             currentText: 'Сегодня',
-            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
-                'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+            monthNames: ['января','февраля','марта','апреля','мая','июня',
+                'июля','августа','сентября','октября','ноября','декабря'],
             monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
                 'Июл','Авг','Сен','Окт','Ноя','Дек'],
             dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
@@ -32,7 +32,7 @@ var AppRouter = Backbone.Router.extend({
         this.persona.fetch({success: function () {
             _self.headerView = new navigation({model: _self.persona});
             $('#header').html(_self.headerView.el);
-            document.title = _self.persona.get("name") + _self.persona.get("surname");
+            document.title = _self.persona.get("name") + " " + _self.persona.get("surname");
             //document.title;
         }});
 
@@ -40,15 +40,20 @@ var AppRouter = Backbone.Router.extend({
 
     facepageRoute: function () {
         this.pageData = {};
-        this.pageData.persona = new personaModel({id: window.personaId});
+        this.persona = new personaModel({id: window.personaId});
         var _self = this;
 
-        this.pageData.persona.fetch({success: function () {
-            _self.pageData.treatmentCollection = new treatmentCollection({personaId: _self.pageData.persona.treatmentId});
-            _self.pageData.treatmentCollection.fetch({success: function () {
+        this.persona.fetch({success: function () {
+            _self.pageData.treatmentCollection = new treatmentCollection();
+            _self.pageData.financeStateCollection = new financeStateCollection();
+            utils.fetchAll({toFetch: _self.pageData,success: function(){
+                _self.pageData.persona = _self.persona;
                 _self.mainPageView = new facePage(_self.pageData);
                 $("#main_container").html(_self.mainPageView.el);
             }})
+//            _self.pageData.treatmentCollection.fetch({success: function () {
+//
+//            }})
         }})
 
 

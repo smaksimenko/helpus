@@ -28,7 +28,11 @@ window.utils = {
                 }
             }})
         }
+    },
+    formatNumber: function(num){
+       return $.formatNumber(parseInt(num), {format: "#,###,###", locale: "ru"})
     }
+
 
 //TODO age counter
 

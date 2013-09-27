@@ -3,13 +3,14 @@ window.store = {
 
     persona: {},
     treatment: {},
+    financeState: {},
     populate: function () {
 
         this.persona[1] = {
             id: 1,
             name: "Тимофей",
             surname: "Салтановский",
-            dateOfBirth: new Date (2012,11,3).getTime(),
+            dateOfBirth: new Date (2012,10,3).getTime(),
             livingCountry: "Украина",
             livingPlace: "Одесса",
             diagnosis: "Диагноз: болезнь Гиршпрунга, тотальной формы (рабочего кишечника всего 50 см). Илеостома. синдром короткой кишки. Носитель кишечных свищей. Белково-энергетическая недостаточность 2 степени. Перитонит. Некроз восходящей ободочной кишки",
@@ -17,14 +18,23 @@ window.store = {
         };
        this.treatment[1] = {
            id: 1,
-           persona_id: 1,
-           treatmentType: "Операция",
+           personaId: 1,
+           treatmentType: window.treatmentType.surgery,
            treatmentCountry: "Германия",
+           treatmentCity: "Маннхейм",
            treatmentPlace: "Университетская Клиника Маннхейма",
            treatmentPrice: 120000,
-           treatmentCurrency: "Евро"
+           treatmentCurrency: 1,
+           treatmentStart:  new Date (2013,10,13).getTime()
        }
-
+      this.financeState[1] = {
+          id: 1,
+          personaId: 1,
+          currency: 1,
+          total: 120000,
+          collected: 19678.42,
+          toDate: new Date (2012,9,23).getTime()
+      }
 
         this.lastId = 24;
     },
@@ -69,6 +79,8 @@ Backbone.sync = function (method, model, options) {
                 resp = model.id ? store.find(model, "persona") : store.findAll("persona");
             }else if (model instanceof treatmentCollection){
                 resp = model.id ? store.find(model, "treatment") : store.findAll("treatment");
+            }else if (model instanceof financeStateCollection){
+                resp = model.id ? store.find(model, "financeState") : store.findAll("financeState");
             }else{
                 console.log(model)}
            // resp = model.id ? store.find(model) : store.findAll();

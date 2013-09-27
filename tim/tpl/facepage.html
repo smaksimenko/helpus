@@ -1,18 +1,76 @@
-<div class="container">
+<div class="container frontBlock">
     <div class="row">
-        <div class="col-md-5"><img src="/images/<%=persona.id%>/frontPage.jpg" class="img-responsive" alt="<%=persona.get('name')%>"></div>
+        <div class="col-md-5"><img src="/images/<%=persona.id%>/frontPage.jpg" class="img-responsive"
+                                   alt="<%=persona.get('name')%>"></div>
         <div class="col-md-7">
             <div class="row">
-                <h3><%=persona.get('name') + " " + persona.get('surname')%></h3>
+                <div class="alert alert-info"><%=persona.get('name') + " " + persona.get('surname')%></div>
             </div>
 
             <div class="row">
-                <div class="col-md-3">Родился:</div>
-                <div class="col-md-9"><%= $.datepicker.formatDate("d M yy", new Date(persona.get('dateOfBirth')))%> года.</div>
+                <div class="col-md-3 col-sm-3 text-right"><strong>Родился:</strong></div>
+                <div class="col-md-9 col-sm-9"><%= $.datepicker.formatDate("d MM yy", new
+                    Date(persona.get('dateOfBirth')))%>
+                    года.
+                </div>
             </div>
             <div class="row">
-                <div class="col-md-3">Живет:</div>
-                <div class="col-md-9"><%= persona.get('livingCountry') + ", " + persona.get('livingPlace')%></div>
+                <div class="col-md-3 col-sm-3  text-right"><strong>Живёт:</strong></div>
+                <div class="col-md-9 col-sm-9"><%= persona.get('livingCountry') + ", " + persona.get('livingPlace')%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 text-right"><strong>Диагноз:</strong></div>
+                <div class="col-md-9 col-sm-9"><%= persona.get('diagnosis')%></div>
+            </div>
+            <div class="row"><div class="alert alert-success">Необходимое лечение</div></div>
+            <% treatmentCollection.each(function(treatment){%>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 text-right"><strong>Тип лечения:</strong></div>
+                <div class="col-md-9 col-sm-9"><%=window.treatmentNames[treatment.get('treatmentType')]%></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 text-right"><strong>Место лечения:</strong></div>
+                <div class="col-md-9 col-sm-9"><%=treatment.get('treatmentCountry')%> <% if
+                    (treatment.get('treatmentCity')){print(", " + treatment.get('treatmentCity'))} %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 text-right"><strong>Клиника:</strong></div>
+                <div class="col-md-9 col-sm-9"><%=treatment.get('treatmentPlace')%></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 text-right"><strong>Дата начала:</strong></div>
+                <div class="col-md-9 col-sm-9"><%=$.datepicker.formatDate("d MM yy", new
+                    Date(treatment.get('treatmentStart')))%>
+                    года.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 text-right"><strong>Стоимость:</strong></div>
+                <div class="col-md-9 col-sm-9"><%=utils.formatNumber(treatment.get('treatmentPrice')) + window.CURRENCY.catalog[treatment.get('treatmentCurrency')].symbol %></div>
+            </div>
+            <%})%>
+            <div class="row">
+                <%var lastFinance = financeStateCollection.models[financeStateCollection.length-1];
+                var lastFinanceCurrency = window.CURRENCY.catalog[lastFinance.get('currency')];
+                var left = lastFinance.get('total') - lastFinance.get('collected')
+                var timeLeft = (treatmentCollection.models[0].get('treatmentStart') - new Date().getTime())/(60*60*24*1000);
+                %>
+                <div class="alert alert-danger">Нужно собрать: <strong><%= utils.formatNumber(lastFinance.get('total')) + lastFinanceCurrency.symbol%></strong></div>
+                </div>
+            <div class="row financeTargetRow">
+                <div class="col-md-6 col-sm-6 text-right text-warning">Осталось собрать:</div>
+                <div class="col-md-6 col-sm-6 text-warning"><%=utils.formatNumber(left) + lastFinanceCurrency.symbol %></div>
+            </div>
+            <div class="row financeTargetRow">
+                <div class="col-md-6 col-sm-6 text-right text-success">Собрано на <%= $.datepicker.formatDate("d MM yy", new
+                    Date(lastFinance.get('toDate')))%>:</div>
+                <div class="col-md-6 col-sm-6 text-success"><%=utils.formatNumber(lastFinance.get('collected'))+ lastFinanceCurrency.symbol%></div>
+            </div>
+            <div class="row financeTargetRow">
+                <div class="col-md-6 col-sm-6 text-right text-danger">Осталось дней:</div>
+                <div class="col-md-6 col-sm-6 text-danger"><%=Math.round(timeLeft)%></div>
             </div>
         </div>
     </div>

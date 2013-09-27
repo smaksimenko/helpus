@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5"><img src="/images/<%=persona.id%>/frontPage.jpg" class="img-responsive" alt="<%=persona.get('name')%>"></div>
+        <div class="col-md-7">
+            <div class="row">
+                <h3><%=persona.get('name') + " " + persona.get('surname')%></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">Родился:</div>
+                <div class="col-md-9"><%= $.datepicker.formatDate("d M yy", new Date(persona.get('dateOfBirth')))%> года.</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Живет:</div>
+                <div class="col-md-9"><%= persona.get('livingCountry') + ", " + persona.get('livingPlace')%></div>
+            </div>
+        </div>
+    </div>
+</div>
+

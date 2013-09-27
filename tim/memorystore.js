@@ -1,8 +1,8 @@
 // The in-memory Store. Encapsulates logic to access wine data.
 window.store = {
 
-    wines: {},
     persona: {},
+    treatment: {},
     populate: function () {
 
         this.persona[1] = {
@@ -10,19 +10,20 @@ window.store = {
             name: "Тимофей",
             surname: "Салтановский",
             dateOfBirth: new Date (2012,11,3).getTime(),
+            livingCountry: "Украина",
             livingPlace: "Одесса",
-            diagnosis: "Диагноз: болезнь Гиршпрунга, тотальной формы (рабочего кишечника всего 50 см). Илеостома. синдром короткой кишки. Носитель кишечных свищей. Белково-энергетическая недостаточность 2 степени. Перитонит. Некроз восходящей ободочной кишки"
+            diagnosis: "Диагноз: болезнь Гиршпрунга, тотальной формы (рабочего кишечника всего 50 см). Илеостома. синдром короткой кишки. Носитель кишечных свищей. Белково-энергетическая недостаточность 2 степени. Перитонит. Некроз восходящей ободочной кишки",
+            treatmentId: 1
         };
-        this.wines[2] = {
-            id: 2,
-            name: "LAN RIOJA CRIANZA",
-            year: "2006",
-            grapes: "Tempranillo",
-            country: "Spain",
-            region: "Rioja",
-            description: "A resurgence of interest in boutique vineyards has opened the door for this excellent foray into the dessert wine market. Light and bouncy, with a hint of black truffle, this wine will not fail to tickle the taste buds.",
-            picture: "lan_rioja.jpg"
-        };
+       this.treatment[1] = {
+           id: 1,
+           persona_id: 1,
+           treatmentType: "Операция",
+           treatmentCountry: "Германия",
+           treatmentPlace: "Университетская Клиника Маннхейма",
+           treatmentPrice: 120000,
+           treatmentCurrency: "Евро"
+       }
 
 
         this.lastId = 24;
@@ -64,11 +65,12 @@ Backbone.sync = function (method, model, options) {
     var resp;
     switch (method) {
         case "read":
-            console.log(model instanceof personaModel);
             if (model instanceof personaModel){
                 resp = model.id ? store.find(model, "persona") : store.findAll("persona");
-            }
-
+            }else if (model instanceof treatmentCollection){
+                resp = model.id ? store.find(model, "treatment") : store.findAll("treatment");
+            }else{
+                console.log(model)}
            // resp = model.id ? store.find(model) : store.findAll();
             break;
         case "create":

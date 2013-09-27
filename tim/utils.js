@@ -15,7 +15,21 @@ window.utils = {
         });
 
         $.when.apply(null, deferreds).done(callback);
+    },
+
+    fetchAll: function (obj) {
+        var counter = 0;
+
+        for (var i in obj.toFetch) {
+            obj.toFetch[i].fetch({success: function () {
+                counter++;
+                if (counter == Object.keys(obj.toFetch).length) {
+                    obj.success();
+                }
+            }})
+        }
     }
 
+//TODO age counter
 
 };

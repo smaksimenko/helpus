@@ -5,6 +5,7 @@ window.personaModel = Backbone.Model.extend({
         name: "",
         surname: "",
         dateOfBirth: "",
+        livingCountry:"",
         livingPlace: "",
         diagnosis: ""
     }
@@ -17,7 +18,8 @@ window.treatmentModel = Backbone.Model.extend({
         treatmentType: null,
         treatmentCountry: "",
         treatmentPlace: "",
-        treatmentPrice: ""
+        treatmentPrice: 0,
+        treatmentCurrency: ""
     }
 })
 

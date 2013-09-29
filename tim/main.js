@@ -2,7 +2,7 @@ var AppRouter = Backbone.Router.extend({
 
     routes: {
         "": "facepageRoute",
-        "second": "second"
+        "help": "helpPage"
     },
 
     initialize: function () {
@@ -55,19 +55,19 @@ var AppRouter = Backbone.Router.extend({
 //
 //            }})
         }})
-
-
     },
-    second: function () {
-
-        $("#main_container").html("second")
+    helpPage: function () {
+        this.pageData = {};
+        var _self = this;
+        var helpPageView = new helpPage();
+        $("#main_container").html(helpPageView.el)
 
     }
 
 
 });
 
-utils.loadTemplate(['navigation', 'facePage'], function () {
+utils.loadTemplate(['navigation', 'facePage', 'helpPage'], function () {
 
     app = new AppRouter();
     Backbone.history.start();

@@ -71,7 +71,7 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['navigation', 'facePage', 'helpPage'], function () {
+utils.loadTemplate(['navigation', 'facePage', 'helpPage', 'bankDetailsPanel', 'bankDetailsPanelRow'], function () {
 
     app = new AppRouter();
     Backbone.history.start();

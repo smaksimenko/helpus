@@ -16,7 +16,7 @@ window.CURRENCY = {
    catalog: {
     0: {shortName:"USD", symbol: "$", name: "Доллар США"},
     1: {shortName:"EUR", symbol: "&euro;", name: "Евро"},
-    2: {shortName:"RUR", symbol: "", name: "Росиийский рубль"},
+    2: {shortName:"RUR", symbol: "", name: "Росcийский рубль"},
     3: {shortName:"UAH", symbol: "₴", name: "Украинская гривна"}
    }
 

@@ -1,0 +1,133 @@
+<div class="container frontBlock">
+    <div class="row">
+        <div class="col-md-5"><img src="/images/<%=persona.id%>/frontPage.jpg" class="img-responsive img-thumbnail"
+                                   alt="<%=persona.get('name')%>"></div>
+        <div class="col-md-7">
+            <div class="panel panel-primary">
+
+
+                <div class="panel-heading">
+                    <h2 class="panel-title"><strong><%=persona.get('name') + " " + persona.get('surname')%></strong>
+                    </h2></div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Родился:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%= $.datepicker.formatDate("d MM yy", new
+                            Date(persona.get('dateOfBirth')))%>
+                            года.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3  text-right"><strong>Живёт:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%= persona.get('livingCountry') + ", " +
+                            persona.get('livingPlace')%>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Диагноз:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%= persona.get('diagnosis')%></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Необходимое лечение</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <% treatmentCollection.each(function(treatment){%>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Тип лечения:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=window.treatmentNames[treatment.get('treatmentType')]%></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Место лечения:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=treatment.get('treatmentCountry')%> <% if
+                            (treatment.get('treatmentCity')){print(", " + treatment.get('treatmentCity'))} %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Клиника:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=treatment.get('treatmentPlace')%></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Дата начала:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=$.datepicker.formatDate("d MM yy", new
+                            Date(treatment.get('treatmentStart')))%>
+                            года.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Стоимость:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=utils.formatNumber(treatment.get('treatmentPrice')) +
+                            window.CURRENCY.catalog[treatment.get('treatmentCurrency')].symbol %>
+                        </div>
+                    </div>
+                    <%})%>
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <%var lastFinance = financeStateCollection.models[financeStateCollection.length-1];
+                var lastFinanceCurrency = window.CURRENCY.catalog[lastFinance.get('currency')];
+                var left = lastFinance.get('total') - lastFinance.get('collected')
+                var timeLeft = (treatmentCollection.models[0].get('treatmentStart') - new
+                Date().getTime())/(60*60*24*1000);
+                %>
+                <div class="panel-heading">
+                    <h3 class="panel-title">Всего нужно собрать: <strong><%= lastFinance.get('total') + " " +
+                        lastFinanceCurrency.symbol %></strong></h3>
+
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item text-warning" style='font-size: larger'>
+                        <span class="badge" style='font-size: larger'><%=utils.formatNumber(left) + " " + lastFinanceCurrency.symbol %></span>
+                        <strong>Осталось собрать:</strong>
+                    </li>
+                    <li class="list-group-item text-success" style='font-size: larger'>
+                        <span class="badge" style='font-size: larger'><%=utils.formatNumber(lastFinance.get('collected'))+ " " +
+                                            lastFinanceCurrency.symbol%></span>
+                        <strong>Собрано на <%= $.datepicker.formatDate("d MM yy", new
+                            Date(lastFinance.get('toDate')))%>:</strong>
+                    </li>
+                    <li class="list-group-item text-danger" style='font-size: larger'>
+                        <span class="badge" style='font-size: larger'><%=Math.round(timeLeft)%></span>
+                        <strong>Осталось дней:</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row well">
+        <p class="">Кишечник ребенка практически не усваивает еду,без операции ребенок не выживет ...</p>
+
+        <p class="">В Украине нет практики в лечении таких тяжёлых форм Гиршпрунга, Украинские врачи только поддерживают
+            ослабший организм ребенка...больше ничем они помочь не могут...</p>
+
+        <p class="">Одна надежда на опыт и многолетнюю практику Германских врачей !!!</p>
+
+        <p class="">За первые 10 дней своей жизни,Тимоша перенёс 3 операции,48 дней реанимации... Он борется за жизнь
+            из-за всех сил!!! Он многое пережил,но и много ещё впереди предстоит пережить!</p>
+
+        <p class="">Но ему не справиться без вашей материальной помощи,ведь его Жизнь оценили в 120000 тыс. евро.</p>
+
+        <p class="">У каждого должен быть шанс быть счастливым...здоровым...</p>
+
+        <p class="">Помогите!!! Победить этот страшный диагноз.Поверьте - это возможно!!!</p>
+
+        <p class="">Родители Тимофея обычные люди ,в семью которых вместе с рождением долгожданного ребеночка пришла
+            БЕДА...ЗА 9 месяцев борьбы за своего сыночка они истратили все свои сбережения...и теперь того что
+            зарабатывает отец Тимошки с трудом хватает на уход и лечение...</p>
+
+        <p class="">Родные и близкие люди оказывают максимальную поддержку и помощь,но этого,к сожалению,не
+            достаточно....</p>
+
+        <p class="">Помогите, насколько позволяют ваши возможности...</p>
+
+        <p class="">Копеечка к копеечке ,и может именно ваша гривна спасает жизнь!!!</p>
+
+        <p class="">У нас очень мало времени до 13 ноября нужно собрать 120000 тыс евро...сумма огромная...но вместе
+            даже самой минимальной помощью мы сможем закрыть сбор и отправить Тимошу на лечение!!!</p>
+    </div>
+</div>
+

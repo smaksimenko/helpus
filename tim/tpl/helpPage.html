@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Как я могу помочь?</h3>
+            </div>
+            <div class="panel-body">
+                <p>Конечной целью является сбор средств необходимый для проведения лечения, и к этой цели направлены все наши усилия.
+                    Но этой цели можно добиться не только перечислением денег. Вы можете разместить баннер на вашем сайте, организовать сбор у себя на работе,
+                    расклеить листовки по Вашему городу, сделать бигборд или растяжку, вести тему на городском форуме или в социальной группе. Все зависит только от Вашей фантазии и возможностей</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <%var bank = banks.models[0];%>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%=bank.get('forCountry') + ": " + bank.get('name')%></h3>
+                </div>
+                <div class="panel-body">
+                    <p><%=bank.get('comment')%></p>
+                </div>
+                    <table class="table table-striped">
+                        <thead>
+                        <th colspan="3">Реквизиты:</th>
+                        </thead>
+                        <% if (bank.get('organisation')){%>
+                        <tr>
+                            <td class="col-md-3">Наименование</td>
+                            <td class="col-md-9"><%= bank.get('organisation')%></td>
+                        </tr>
+                        <%}
+                        if (bank.get('MFO')){%>
+                        <tr>
+                            <td class="col-md-3">МФО</td>
+                            <td class="col-md-9"><%=bank.get('MFO')%></td>
+                        </tr>
+                        <%} if (bank.get('OKPO')){%>
+                        <tr>
+                            <td class="col-md-3">ОКПО</td>
+                            <td class="col-md-9">305299</td>
+                        </tr>
+                        <%} if (bank.get('accountNumber')){%>
+                        <tr>
+                            <td class="col-md-3">Рассчетный счет</td>
+                            <td class="col-md-9">29244825509100</td>
+                        </tr>
+                        <%} if (bank.get('target')){%>
+                        <tr>
+                            <td class="col-md-3">Назначение</td>
+                            <td class="col-md-9">Для пополнение карты 4149437744067222 Салтановский Максим
+                                Владимирович
+                            </td>
+                        </tr>
+                        <%}%>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>

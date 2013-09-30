@@ -60,18 +60,17 @@ var AppRouter = Backbone.Router.extend({
         this.pageData = {};
         var _self = this;
         this.pageData.banks = new financeBanktCollection();
+        this.pageData.webmoney = new webMoneyCollection();
         utils.fetchAll({toFetch:this.pageData, success:function(){
             var helpPageView = new helpPage(_self.pageData);
             $("#main_container").html(helpPageView.el)
         }})
-
-
     }
 
 
 });
 
-utils.loadTemplate(['navigation', 'facePage', 'helpPage', 'bankDetailsPanel', 'bankDetailsPanelRow'], function () {
+utils.loadTemplate(['navigation', 'facePage', 'helpPage', 'bankDetailsPanel', 'bankDetailsPanelRow', 'webmoneyDetailsPanel', 'webmoneyDetailsRow'], function () {
 
     app = new AppRouter();
     Backbone.history.start();

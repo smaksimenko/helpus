@@ -1,3 +1,4 @@
+
 window.treatmentType = {
     surgery:0,
     prosthesis:1,
@@ -13,11 +14,13 @@ window.CURRENCY = {
    EUR: 1,
    RUR: 2,
    UAH: 3,
+   BYR: 4,
    catalog: {
     0: {shortName:"USD", symbol: "$", name: "Доллар США"},
     1: {shortName:"EUR", symbol: "&euro;", name: "Евро"},
     2: {shortName:"RUR", symbol: "", name: "Росcийский рубль"},
-    3: {shortName:"UAH", symbol: "₴", name: "Украинская гривна"}
+    3: {shortName:"UAH", symbol: "₴", name: "Украинская гривна"},
+    4: {shortName:"BYR", symbol: "", name: "Белорусский рубль"}
    }
 
 

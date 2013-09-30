@@ -62,11 +62,25 @@ window.financeBankModel = Backbone.Model.extend({
         currency: null,
         cardNumber: null,
         preset: null,
-        comment: null
+        comment: null,
+        personaId: null
     }
 })
 
 window.financeBanktCollection = Backbone.Collection.extend({
     model: financeBankModel,
     url: "/financeAccount"
+})
+
+window.webmoneyModel = Backbone.Model.extend({
+    id: null,
+    name: null,
+    number: null,
+    currency: null,
+    urlRoot: "/webmoney"
+})
+
+window.webMoneyCollection = Backbone.Collection.extend({
+    model: webmoneyModel,
+    url: "/webmoney"
 })

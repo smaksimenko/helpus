@@ -5,6 +5,7 @@ window.store = {
     treatment: {},
     financeState: {},
     financeBank: {},
+    webmoney: {},
     populate: function () {
 
         this.persona[1] = {
@@ -34,7 +35,7 @@ window.store = {
             currency: 1,
             total: 120000,
             collected: 19678.42,
-            toDate: new Date(2012, 9, 23).getTime()
+            toDate: new Date(2012, 8, 23).getTime()
         };
         this.financeBank[1] = {
             id: 1,
@@ -88,6 +89,41 @@ window.store = {
             target: "Салтановская Елена Олеговна",
             currency: window.CURRENCY.UAH
         };
+        this.webmoney[1] = {
+            id: 1,
+            name: "Webmoney",
+            number: "Z204400171934",
+            currency: window.CURRENCY.USD
+        };
+        this.webmoney[2] = {
+            id: 2,
+            name: "Webmoney",
+            number: "E205104290022",
+            currency: window.CURRENCY.EUR
+        };
+        this.webmoney[3] = {
+            id: 3,
+            name: "Webmoney",
+            number: "R202647357458",
+            currency: window.CURRENCY.RUR
+        };
+        this.webmoney[4] = {
+            id: 4,
+            name: "Webmoney",
+            number: "U701874816819",
+            currency: window.CURRENCY.UAH
+        };
+        this.webmoney[5] = {
+            id: 5,
+            name: "Webmoney",
+            number: "B506763209534",
+            currency: window.CURRENCY.BYR
+        };
+        this.webmoney[6] = {
+            id: 6,
+            name: "Kiwi",
+            number: "+3800631653928"
+        }
 
 
         this.lastId = 24;
@@ -137,7 +173,9 @@ Backbone.sync = function (method, model, options) {
                 resp = model.id ? store.find(model, "financeState") : store.findAll("financeState");
             } else if (model instanceof financeBanktCollection) {
                 resp = model.id ? store.find(model, "financeBank") : store.findAll("financeBank");
-            } else {
+            } else if (model instanceof webMoneyCollection) {
+                            resp = model.id ? store.find(model, "webmoney") : store.findAll("webmoney");
+                        } else {
                 console.log(model)
             }
             // resp = model.id ? store.find(model) : store.findAll();

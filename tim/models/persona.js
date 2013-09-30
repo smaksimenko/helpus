@@ -48,17 +48,25 @@ window.financeStateCollection = Backbone.Collection.extend({
     url: "/financeState"
 })
 
-window.finaccauntModel = Backbone.Model.extend({
+window.financeBankModel = Backbone.Model.extend({
     urlRoot: "/financeAccount",
     default: {
         id: null,
         name: null,
-        organisation: null
-       // benifit
+        forCountry: null,
+        organisation: null,
+        MFO: 0,
+        OKPO: 0,
+        accountNumber: 0,
+        target: null,
+        currency: null,
+        cardNumber: null,
+        preset: null,
+        comment: null
     }
 })
 
-window.finaccauntCollection = Backbone.Collection.extend({
-    model: financeStateCollection,
+window.financeBanktCollection = Backbone.Collection.extend({
+    model: financeBankModel,
     url: "/financeAccount"
 })

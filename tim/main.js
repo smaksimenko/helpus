@@ -59,8 +59,12 @@ var AppRouter = Backbone.Router.extend({
     helpPage: function () {
         this.pageData = {};
         var _self = this;
-        var helpPageView = new helpPage();
-        $("#main_container").html(helpPageView.el)
+        this.pageData.banks = new financeBanktCollection();
+        utils.fetchAll({toFetch:this.pageData, success:function(){
+            var helpPageView = new helpPage(_self.pageData);
+            $("#main_container").html(helpPageView.el)
+        }})
+
 
     }
 

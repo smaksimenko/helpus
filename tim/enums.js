@@ -12,10 +12,12 @@ window.CURRENCY = {
    USD: 0,
    EUR: 1,
    RUR: 2,
+   UAH: 3,
    catalog: {
     0: {shortName:"USD", symbol: "$", name: "Доллар США"},
     1: {shortName:"EUR", symbol: "&euro;", name: "Евро"},
-    2: {shortName:"RUR", symbol: "", name: "Росиийский рубль"}
+    2: {shortName:"RUR", symbol: "", name: "Росиийский рубль"},
+    3: {shortName:"UAH", symbol: "₴", name: "Украинская гривна"}
    }
 
 

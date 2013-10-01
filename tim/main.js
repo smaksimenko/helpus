@@ -3,7 +3,7 @@ var AppRouter = Backbone.Router.extend({
     routes: {
         "": "facepageRoute",
         "help": "helpPage",
-        "contacts": "contactsPage",
+        "contacts": "contactsPageF",
         "documents": "documentsPage"
     },
 
@@ -68,8 +68,8 @@ var AppRouter = Backbone.Router.extend({
             $("#main_container").html(helpPageView.el)
         }})
     },
-    contactsPage: function () {
-        $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей</div>")
+    contactsPageF: function () {
+        $("#main_container").html(new contactspage().el)
     },
     documentsPage: function () {
         $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей</div>")
@@ -77,7 +77,8 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['navigation', 'facePage', 'helpPage', 'bankDetailsPanel', 'bankDetailsPanelRow', 'webmoneyDetailsPanel', 'webmoneyDetailsRow'], function () {
+utils.loadTemplate(['navigation', 'facePage', 'helpPage', 'bankDetailsPanel', 'bankDetailsPanelRow',
+    'webmoneyDetailsPanel', 'webmoneyDetailsRow', 'contactspage'], function () {
 
     app = new AppRouter();
     Backbone.history.start();

@@ -35,7 +35,7 @@ window.store = {
             currency: 1,
             total: 120000,
             collected: 19678.42,
-            toDate: new Date(2012, 8, 23).getTime()
+            toDate: new Date(2013, 8, 23).getTime()
         };
         this.financeBank[1] = {
             id: 1,

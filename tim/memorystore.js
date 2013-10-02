@@ -6,6 +6,8 @@ window.store = {
     financeState: {},
     financeBank: {},
     webmoney: {},
+    contact: {},
+    social: {},
     populate: function () {
 
         this.persona[1] = {
@@ -123,6 +125,47 @@ window.store = {
             id: 6,
             name: "Kiwi",
             number: "+3800631653928"
+        };
+        this.contact[1] = {
+            id: 1,
+            personaId: 1,
+            name: "Салтановский Максим",
+            country: "Украина",
+            city: "Одесса",
+            phone: "+3 8063 165 39 29",
+            relation: "отец"
+        };
+        this.contact[2] = {
+            id: 2,
+            personaId: 1,
+            name: "Антон Шепелев",
+            country: "Россия",
+            phone: "+7 925 710 27 07",
+            relation: "дядя"
+        };
+        this.social[1] = {
+            id: 1,
+            personaId: 1,
+            name: "вКонтакте",
+            link: "http://vk.com/club47805682"
+        };
+        this.social[2] = {
+            id: 2,
+            personaId: 1,
+            name: "Одесский форум",
+            link: "http://forum.od.ua/showthread.php?t=2029026"
+        };
+        this.social[3] = {
+            id: 3,
+            personaId: 1,
+            name: "Одноклассники",
+            link: "http://www.odnoklassniki.ru/timoshkakh"
+        };
+        this.social[4] = {
+            id: 4,
+            personaId: 1,
+            name: "facebook",
+            link: "	https://www.facebook.com/timofei.saltanovsky"
         }
 
 
@@ -174,8 +217,12 @@ Backbone.sync = function (method, model, options) {
             } else if (model instanceof financeBanktCollection) {
                 resp = model.id ? store.find(model, "financeBank") : store.findAll("financeBank");
             } else if (model instanceof webMoneyCollection) {
-                            resp = model.id ? store.find(model, "webmoney") : store.findAll("webmoney");
-                        } else {
+                resp = model.id ? store.find(model, "webmoney") : store.findAll("webmoney");
+            } else if (model instanceof contactCollection) {
+                resp = model.id ? store.find(model, "contact") : store.findAll("contact");
+            } else if (model instanceof socialCollection) {
+                resp = model.id ? store.find(model, "social") : store.findAll("social");
+            } else {
                 console.log(model)
             }
             // resp = model.id ? store.find(model) : store.findAll();

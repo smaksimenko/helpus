@@ -69,7 +69,14 @@ var AppRouter = Backbone.Router.extend({
         }})
     },
     contactsPageF: function () {
-        $("#main_container").html(new contactspage().el)
+        this.pageData = {};
+        this.pageData.contacts = new contactCollection();
+        this.pageData.social = new socialCollection();
+        var _self = this;
+        utils.fetchAll({toFetch: this.pageData,success: function(){
+            $("#main_container").html(new contactspage(_self.pageData).el)
+        }})
+
     },
     documentsPage: function () {
         $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей</div>")
@@ -78,7 +85,7 @@ var AppRouter = Backbone.Router.extend({
 });
 
 utils.loadTemplate(['navigation', 'facePage', 'helpPage', 'bankDetailsPanel', 'bankDetailsPanelRow',
-    'webmoneyDetailsPanel', 'webmoneyDetailsRow', 'contactspage'], function () {
+    'webmoneyDetailsPanel', 'webmoneyDetailsRow', 'contactspage','panelDefault', 'contactsTable', 'socialTable'], function () {
 
     app = new AppRouter();
     Backbone.history.start();

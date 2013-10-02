@@ -84,3 +84,34 @@ window.webMoneyCollection = Backbone.Collection.extend({
     model: webmoneyModel,
     url: "/webmoney"
 })
+
+window.contactModel = Backbone.Model.extend({
+    urlRoot: "/contact",
+    default: {
+        id: null,
+        personaId: null,
+        name: null,
+        country: null,
+        city: null,
+        phone: null,
+        relation: null
+    }
+})
+window.contactCollection = Backbone.Collection.extend({
+    url: "/contact",
+    model: contactModel
+})
+window.socialModel =  Backbone.Model.extend({
+    urlRoot: "/social",
+    default: {
+        id: null,
+        personaId: null,
+        name: null,
+        link: null,
+        alias: null
+    }
+})
+window.socialCollection = new Backbone.Collection.extend({
+    url:"/social",
+    model:socialModel
+})

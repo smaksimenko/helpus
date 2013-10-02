@@ -1,7 +1,14 @@
-﻿<div class="panel panel-default">
-      <div class="panel-heading">
-          <%if (title){%>
-          <h3 class="panel-title"><%=title%></h3>
-          <%}%>
-      </div>
- </div>
+﻿<% contacts.each(function(m){
+        print("<tr>");
+        print("<td>" + m.get('name'));
+        if (m.get('relation')){
+            print (", " + m.get('relation'))
+        }
+        print("</td><td>" + m.get('country'));
+        if (m.get('city')){
+            print(", " +m.get('city'));
+        }
+        print("</td><td>" + m.get("phone") + "</td>");
+    print("</tr>")
+
+})  %>

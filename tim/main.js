@@ -84,8 +84,18 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['navigation', 'facePage', 'helpPage', 'bankDetailsPanel', 'bankDetailsPanelRow',
-    'webmoneyDetailsPanel', 'webmoneyDetailsRow', 'contactspage','panelDefault', 'contactsTable', 'socialTable'], function () {
+utils.loadTemplate(['navigation',
+    'facePage',
+    'helpPage',
+    'bankDetailsPanel',
+    'bankDetailsPanelRow',
+    'webmoneyDetailsPanel',
+    'webmoneyDetailsRow',
+    'contactspage',
+    'panelDefault',
+    'contactsTable',
+    'socialTable'
+], function () {
 
     app = new AppRouter();
     Backbone.history.start();

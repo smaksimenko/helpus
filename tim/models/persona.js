@@ -101,7 +101,8 @@ window.contactCollection = Backbone.Collection.extend({
     url: "/contact",
     model: contactModel
 })
-window.socialModel =  Backbone.Model.extend({
+
+window.socialModel = Backbone.Model.extend({
     urlRoot: "/social",
     default: {
         id: null,
@@ -111,7 +112,8 @@ window.socialModel =  Backbone.Model.extend({
         alias: null
     }
 })
-window.socialCollection = new Backbone.Collection.extend({
+
+window.socialCollection = Backbone.Collection.extend({
     url:"/social",
     model:socialModel
 })

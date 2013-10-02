@@ -15,6 +15,11 @@ window.contactspage = Backbone.View.extend({
             panelSocial.$el.append((new socialTable({social: this.options.social})).el);
             this.$el.find('#panelsPlaceholder').append(panelSocial.el);
         }
+        if (this.options.foundations.length > 0) {
+            var panelFoundations = new panelDefault({title: "Благотворительные организации"});
+            panelFoundations.$el.append((new socialTable({social: this.options.foundations})).el);
+            this.$el.find('#panelsPlaceholder').append(panelFoundations.el);
+        }
 
     }
 })

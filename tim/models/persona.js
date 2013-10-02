@@ -117,3 +117,19 @@ window.socialCollection = Backbone.Collection.extend({
     url:"/social",
     model:socialModel
 })
+
+window.charityFoundationsModel = Backbone.Model.extend({
+    urlRoot: "/charityFoundations",
+    default: {
+        id: null,
+        personaId: null,
+        name: null,
+        link: null,
+        alias: null
+    }
+})
+
+window.charityFoundationsCollection = Backbone.Collection.extend({
+    url: "/charityFoundations",
+    model:charityFoundationsModel
+})

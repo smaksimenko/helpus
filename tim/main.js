@@ -44,6 +44,7 @@ var AppRouter = Backbone.Router.extend({
         this.pageData = {};
         this.persona = new personaModel({id: window.personaId});
         var _self = this;
+        $(".nav li").removeClass('active');
 
         this.persona.fetch({success: function () {
             _self.pageData.treatmentCollection = new treatmentCollection();
@@ -59,6 +60,9 @@ var AppRouter = Backbone.Router.extend({
         }})
     },
     helpPage: function () {
+            $(".nav li").removeClass('active');
+            $('#nav_help').addClass("active");
+
         this.pageData = {};
         var _self = this;
         this.pageData.banks = new financeBanktCollection();
@@ -69,9 +73,13 @@ var AppRouter = Backbone.Router.extend({
         }})
     },
     contactsPageF: function () {
+        $(".nav li").removeClass('active');
+        $('#nav_contacts').addClass("active");
+
         this.pageData = {};
         this.pageData.contacts = new contactCollection();
         this.pageData.social = new socialCollection();
+        this.pageData.foundations = new charityFoundationsCollection();
         var _self = this;
         utils.fetchAll({toFetch: this.pageData,success: function(){
             $("#main_container").html(new contactspage(_self.pageData).el)
@@ -79,6 +87,9 @@ var AppRouter = Backbone.Router.extend({
 
     },
     documentsPage: function () {
+        $(".nav li").removeClass('active');
+        $('#nav_documents').addClass("active");
+
         $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей</div>")
     }
 

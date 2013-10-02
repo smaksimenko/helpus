@@ -2,7 +2,17 @@
     <div class="row">
         <div class="col-md-5"><img src="/images/<%=persona.id%>/frontPage.jpg" class="img-responsive img-thumbnail"
                                    alt="<%=persona.get('name')%>">
-         <a href="#help" id='helpAction' class="btn btn-warning pull-right" style='margin-top: -50px; margin-right: 10px; position:relative; z-index:50000000'>Хочу помочь!</a>
+         <a href="#help" id='helpAction' class="btn btn-warning pull-right" style='margin-top: -50px; margin-right: 10px; position:relative; z-index:50000000'>Хочу помочь сейчас!</a>
+            <script language='javascript'>
+                $("#helpAction").popover({
+                    html: true,
+                    placement: "top",
+                    trigger: 'hover',
+                    content:'<strong>Россия:</strong> можно править отправить СМС на номер 3116 с текстом "meg&nbsp;9257102707&nbsp;сумма"'
+                });
+
+
+            </script>
         </div>
         <div class="col-md-7">
             <div class="panel panel-primary">
@@ -75,6 +85,13 @@
                 var left = lastFinance.get('total') - lastFinance.get('collected')
                 var timeLeft = (treatmentCollection.models[0].get('treatmentStart') - new
                 Date().getTime())/(60*60*24*1000);
+                var popover="<table class='table'>";
+                financeStateCollection.each(function(model){
+                    popover += "<tr><td>"+$.datepicker.formatDate("d/mm/yy", new
+                    Date(model.get('toDate')))+"</td><td>"+utils.formatNumber(model.get('collected'))+ " " +window.CURRENCY.catalog[model.get('currency')].symbol +"</td>";
+                })
+                popover +="</table>"
+
                 %>
                 <div class="panel-heading">
                     <h3 class="panel-title">Всего нужно собрать: <strong><%= lastFinance.get('total') + " " +
@@ -87,11 +104,21 @@
                         <strong>Осталось собрать:</strong>
                     </li>
                     <li class="list-group-item text-success" style='font-size: larger'>
-                        <span class="badge" style='font-size: larger'><%=utils.formatNumber(lastFinance.get('collected'))+ " " +
+                        <span data-content="<%=popover%>" id="collectedBadge" class="badge" style='font-size: larger; cursor: help'><%=utils.formatNumber(lastFinance.get('collected'))+ " " +
                                             lastFinanceCurrency.symbol%></span>
                         <strong>Собрано на <%= $.datepicker.formatDate("d MM yy", new
                             Date(lastFinance.get('toDate')))%>:</strong>
                     </li>
+                    <script language="javascript">
+
+                        $("#collectedBadge").popover({
+                            html: true,
+                            placement: "left",
+                            trigger: 'hover',
+                            title: "История сбора"
+
+                        });
+                        </script>
                     <li class="list-group-item text-danger" style='font-size: larger'>
                         <span class="badge" style='font-size: larger'><%=Math.round(timeLeft)%></span>
                         <strong>Осталось дней:</strong>
@@ -100,6 +127,7 @@
             </div>
         </div>
     </div>
+    <div class="alert alert-warning"><span class="glyphicon glyphicon-pushpin"></span> Текст обращения взят с старт-поста одесского форума. Стилистика и орфография автора сохранена.</div>
     <div class="row well">
         <p class="">Кишечник ребенка практически не усваивает еду,без операции ребенок не выживет ...</p>
 

@@ -8,6 +8,7 @@ window.store = {
     webmoney: {},
     contact: {},
     social: {},
+    foundations: {},
     populate: function () {
 
         this.persona[1] = {
@@ -174,6 +175,26 @@ window.store = {
             personaId: 1,
             name: "facebook",
             link: "	https://www.facebook.com/timofei.saltanovsky"
+        };
+        this.social[5] = {
+            id: 5,
+            personaId: 1,
+            name: "Kidstaff",
+            link: "http://www.kidstaff.com.ua/forum/viewtopic.php?t=58650"
+        };
+        this.foundations[1] = {
+            id: 1,
+            personaId: 1,
+            name: "Благотворительный фонд 'Пчелка'",
+            link: "http://pchelka.ua/kids/saltanovskii-timofei",
+            alias: "Перейти на сайт"
+        };
+        this.foundations[2] = {
+            id: 2,
+            personaId: 1,
+            name: "Благотворительная организация 'Спасибо'",
+            link: "http://spasibo.od.ua/sos-%D0%BC%D0%BB%D0%B0%D0%B4%D0%B5%D0%BD%D0%B5%D1%86-%D1%82%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B9-%D1%81%D0%B0%D0%BB%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9-%D0%B2-%D0%B1%D0%BE%D1%80/",
+            alias: "Перейти на сайт"
         }
 
 
@@ -230,6 +251,8 @@ Backbone.sync = function (method, model, options) {
                 resp = model.id ? store.find(model, "contact") : store.findAll("contact");
             } else if (model instanceof socialCollection) {
                 resp = model.id ? store.find(model, "social") : store.findAll("social");
+            } else if (model instanceof charityFoundationsCollection) {
+                resp = model.id ? store.find(model, "foundations") : store.findAll("foundations");
             } else {
                 console.log(model)
             }

@@ -2,13 +2,15 @@
     <div class="row">
         <div class="col-md-5"><img src="/images/<%=persona.id%>/frontPage.jpg" class="img-responsive img-thumbnail"
                                    alt="<%=persona.get('name')%>">
-         <a href="#help" id='helpAction' class="btn btn-warning pull-right" style='margin-top: -50px; margin-right: 10px; position:relative; z-index:50000000'>Хочу помочь сейчас!</a>
+            <a href="#help" id='helpAction' class="btn btn-warning pull-right"
+               style='margin-top: -50px; margin-right: 10px; position:relative; z-index:50000000'>Хочу помочь
+                сейчас!</a>
             <script language='javascript'>
                 $("#helpAction").popover({
                     html: true,
                     placement: "top",
                     trigger: 'hover',
-                    content:'<strong>Россия:</strong> можно править отправить СМС на номер 3116 с текстом "meg&nbsp;9257102707&nbsp;сумма"'
+                    content: '<strong>Россия:</strong> можно править отправить СМС на номер 3116 с текстом "meg&nbsp;9257102707&nbsp;сумма"'
                 });
 
 
@@ -86,11 +88,10 @@
                 var timeLeft = (treatmentCollection.models[0].get('treatmentStart') - new
                 Date().getTime())/(60*60*24*1000);
                 var popover="<table class='table'>";
-                financeStateCollection.each(function(model){
-                    popover += "<tr><td>"+$.datepicker.formatDate("d/mm/yy", new
-                    Date(model.get('toDate')))+"</td><td>"+utils.formatNumber(model.get('collected'))+ " " +window.CURRENCY.catalog[model.get('currency')].symbol +"</td>";
-                })
-                popover +="</table>"
+                    financeStateCollection.each(function(model){
+                        popover += "<tr><td>"+$.datepicker.formatDate("d/mm/yy", new Date(model.get('toDate')))+"</td><td>"+utils.formatNumber(model.get('collected'))+ " "+window.CURRENCY.catalog[model.get('currency')].symbol +"</td>";
+                        })
+                        popover +="</table>";
 
                 %>
                 <div class="panel-heading">
@@ -104,7 +105,8 @@
                         <strong>Осталось собрать:</strong>
                     </li>
                     <li class="list-group-item text-success" style='font-size: larger'>
-                        <span data-content="<%=popover%>" id="collectedBadge" class="badge" style='font-size: larger; cursor: help'><%=utils.formatNumber(lastFinance.get('collected'))+ " " +
+                        <span data-content="<%=popover%>" id="collectedBadge" class="badge"
+                              style='font-size: larger; cursor: help'><%=utils.formatNumber(lastFinance.get('collected'))+ " " +
                                             lastFinanceCurrency.symbol%></span>
                         <strong>Собрано на <%= $.datepicker.formatDate("d MM yy", new
                             Date(lastFinance.get('toDate')))%>:</strong>
@@ -118,7 +120,7 @@
                             title: "История сбора"
 
                         });
-                        </script>
+                    </script>
                     <li class="list-group-item text-danger" style='font-size: larger'>
                         <span class="badge" style='font-size: larger'><%=Math.round(timeLeft)%></span>
                         <strong>Осталось дней:</strong>
@@ -127,37 +129,73 @@
             </div>
         </div>
     </div>
-    <div class="alert alert-warning"><span class="glyphicon glyphicon-pushpin"></span> Текст обращения взят с старт-поста одесского форума. Стилистика и орфография автора сохранена.</div>
-    <div class="row well">
-        <p class="">Кишечник ребенка практически не усваивает еду,без операции ребенок не выживет ...</p>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row padding-right-middle">
 
-        <p class="">В Украине нет практики в лечении таких тяжёлых форм Гиршпрунга, Украинские врачи только поддерживают
-            ослабший организм ребенка...больше ничем они помочь не могут...</p>
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Акции:  <%= $.datepicker.formatDate("d MM yy", new
+                        Date(2013,9,6))%></h3>
+                </div>
+                <div class="panel-body">
+                    <p>Корпорация клоунов "Оранжевое настроение" проводит БЛАГОТВОРИТЕЛЬНЫЙ детский клоун-концерт "ДЛЯ ТИМОШКИ". Цену билета каждый зритель определяет сам. Все средства, собранные в ходе мероприятия будут переданы на лечение Салтановского Тимошки.</p> <p>Мероприятие состоится <strong>6 октября в 12:00 по адресу: Екатериниская площадь, 6, театр-кабаре "Буффон"</strong></p>
+                </div>
+            </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Акции:  <%= $.datepicker.formatDate("d MM yy", new
+                            Date(2013,9,6))%></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>С 6.30 до 17.00 возле Храма Владимирской иконы Божией Матери на поселке Котовского </strong> (Одесса, пр. Добровольского, 110) состоится акция в помощь Тимофею Салтановскому.</p>
+                        <p>Вы сможете отведать вкусной  домашней выпечки, солений или преобрести Hand Maid сувениры. Все вырученные средтва будут перечислены на лечение Тимофея</p>
+                    </div>
+                </div>
+        </div>
+            </div>
+        <div class="col-md-9">
 
-        <p class="">Одна надежда на опыт и многолетнюю практику Германских врачей !!!</p>
+            <div class="row well">
+                <div class="alert alert-warning"><small><span class="glyphicon glyphicon-pushpin"></span> Текст обращения взят со
+                    старт-поста одесского форума. Стилистика и орфография автора сохранена.</small>
+                </div>
+                <p class="">Кишечник ребенка практически не усваивает еду,без операции ребенок не выживет ...</p>
 
-        <p class="">За первые 10 дней своей жизни,Тимоша перенёс 3 операции,48 дней реанимации... Он борется за жизнь
-            из-за всех сил!!! Он многое пережил,но и много ещё впереди предстоит пережить!</p>
+                <p class="">В Украине нет практики в лечении таких тяжёлых форм Гиршпрунга, Украинские врачи только
+                    поддерживают
+                    ослабший организм ребенка...больше ничем они помочь не могут...</p>
 
-        <p class="">Но ему не справиться без вашей материальной помощи,ведь его Жизнь оценили в 120000 тыс. евро.</p>
+                <p class="">Одна надежда на опыт и многолетнюю практику Германских врачей !!!</p>
 
-        <p class="">У каждого должен быть шанс быть счастливым...здоровым...</p>
+                <p class="">За первые 10 дней своей жизни,Тимоша перенёс 3 операции,48 дней реанимации... Он борется за
+                    жизнь
+                    из-за всех сил!!! Он многое пережил,но и много ещё впереди предстоит пережить!</p>
 
-        <p class="">Помогите!!! Победить этот страшный диагноз.Поверьте - это возможно!!!</p>
+                <p class="">Но ему не справиться без вашей материальной помощи,ведь его Жизнь оценили в 120000 тыс.
+                    евро.</p>
 
-        <p class="">Родители Тимофея обычные люди ,в семью которых вместе с рождением долгожданного ребеночка пришла
-            БЕДА...ЗА 9 месяцев борьбы за своего сыночка они истратили все свои сбережения...и теперь того что
-            зарабатывает отец Тимошки с трудом хватает на уход и лечение...</p>
+                <p class="">У каждого должен быть шанс быть счастливым...здоровым...</p>
 
-        <p class="">Родные и близкие люди оказывают максимальную поддержку и помощь,но этого,к сожалению,не
-            достаточно....</p>
+                <p class="">Помогите!!! Победить этот страшный диагноз.Поверьте - это возможно!!!</p>
 
-        <p class="">Помогите, насколько позволяют ваши возможности...</p>
+                <p class="">Родители Тимофея обычные люди ,в семью которых вместе с рождением долгожданного ребеночка
+                    пришла
+                    БЕДА...ЗА 9 месяцев борьбы за своего сыночка они истратили все свои сбережения...и теперь того что
+                    зарабатывает отец Тимошки с трудом хватает на уход и лечение...</p>
 
-        <p class="">Копеечка к копеечке ,и может именно ваша гривна спасает жизнь!!!</p>
+                <p class="">Родные и близкие люди оказывают максимальную поддержку и помощь,но этого,к сожалению,не
+                    достаточно....</p>
 
-        <p class="">У нас очень мало времени до 13 ноября нужно собрать 120000 тыс евро...сумма огромная...но вместе
-            даже самой минимальной помощью мы сможем закрыть сбор и отправить Тимошу на лечение!!!</p>
+                <p class="">Помогите, насколько позволяют ваши возможности...</p>
+
+                <p class="">Копеечка к копеечке ,и может именно ваша гривна спасает жизнь!!!</p>
+
+                <p class="">У нас очень мало времени до 13 ноября нужно собрать 120000 тыс евро...сумма огромная...но
+                    вместе
+                    даже самой минимальной помощью мы сможем закрыть сбор и отправить Тимошу на лечение!!!</p>
+            </div>
+        </div>
     </div>
 </div>
 <script>

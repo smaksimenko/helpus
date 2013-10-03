@@ -90,7 +90,7 @@ var AppRouter = Backbone.Router.extend({
         $(".nav li").removeClass('active');
         $('#nav_documents').addClass("active");
 
-        $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей</div>")
+        $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей. Ознакомиться с документами Вы можете перейдя по ссылкам из раздела <a href='#contacts'> контакты</a></div>")
     }
 
 });

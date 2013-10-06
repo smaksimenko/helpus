@@ -49,6 +49,7 @@ var AppRouter = Backbone.Router.extend({
         this.persona.fetch({success: function () {
             _self.pageData.treatmentCollection = new treatmentCollection();
             _self.pageData.financeStateCollection = new financeStateCollection();
+            _self.pageData.adverts = new advertCollection();
             utils.fetchAll({toFetch: _self.pageData, success: function () {
                 _self.pageData.persona = _self.persona;
                 _self.mainPageView = new facePage(_self.pageData);
@@ -103,9 +104,12 @@ utils.loadTemplate(['navigation',
     'webmoneyDetailsPanel',
     'webmoneyDetailsRow',
     'contactspage',
-    'panelDefault',
+    //'panelDefault',
     'contactsTable',
-    'socialTable'
+    'socialTable',
+    'advertsView',
+    'panelView'
+
 ], function () {
 
     app = new AppRouter();

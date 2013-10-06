@@ -9,6 +9,7 @@ window.store = {
     contact: {},
     social: {},
     foundations: {},
+    advert: {},
     populate: function () {
 
         this.persona[1] = {
@@ -203,6 +204,28 @@ window.store = {
             name: "Благотворительная организация 'Спасибо'",
             link: "http://spasibo.od.ua/sos-%D0%BC%D0%BB%D0%B0%D0%B4%D0%B5%D0%BD%D0%B5%D1%86-%D1%82%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B9-%D1%81%D0%B0%D0%BB%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9-%D0%B2-%D0%B1%D0%BE%D1%80/",
             alias: "Перейти на сайт"
+        };
+        this.advert[1] = {
+            id: 1,
+            actionDate: new Date(2013, 9, 6).getTime(),
+            addDate: new Date(2013, 9, 4).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "С 6.30 до 17.00 возле Храма Владимирской иконы Божией Матери на поселке Котовского </strong> (Одесса, пр. Добровольского, 110) состоится акция в помощь Тимофею Салтановскому. Вы сможете отведать вкусной  домашней выпечки, солений или преобрести Hand Maid сувениры. Все вырученные средтва будут перечислены на лечение Тимофея",
+            photo: false,
+            advertType: ADVERT_TYPES.action
+        };
+        this.advert[2] = {
+            id: 2,
+            actionDate: new Date(2013, 9, 6).getTime(),
+            addDate: new Date(2013, 9, 4).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Корпорация клоунов 'Оранжевое настроение' проводит БЛАГОТВОРИТЕЛЬНЫЙ детский клоун-концерт 'ДЛЯ ТИМОШКИ'. Цену билета каждый зритель определяет сам. Все средства, собранные в ходе мероприятия будут переданы на лечение Салтановского Тимошки.</p> <p>Мероприятие состоится <strong>6 октября в 12:00 по адресу: Екатериниская площадь, 6, театр-кабаре 'Буффон'</strong>",
+            photo: false,
+            advertType: ADVERT_TYPES.action
         }
 
 
@@ -261,6 +284,8 @@ Backbone.sync = function (method, model, options) {
                 resp = model.id ? store.find(model, "social") : store.findAll("social");
             } else if (model instanceof charityFoundationsCollection) {
                 resp = model.id ? store.find(model, "foundations") : store.findAll("foundations");
+            } else if (model instanceof advertCollection) {
+                resp = model.id ? store.find(model, "advert") : store.findAll("advert");
             } else {
                 console.log(model)
             }

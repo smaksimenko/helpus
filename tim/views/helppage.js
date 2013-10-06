@@ -24,11 +24,11 @@ window.helpPage = Backbone.View.extend({
         _self.$el.find(id).append(new webmoneyDetailsPanel({coll: this.options.webmoney}).el);
 
     }
+
 })
-window.bankDetailsPanel = Backbone.View.extend({
-    tagName: "div",
-    className: "panel panel-success",
-    initialize: function () {
+
+window.bankDetailsPanel = panelSuccess.extend({
+        initialize: function () {
         this.render()
     },
     render: function () {
@@ -77,9 +77,7 @@ window.bankDetailsPanelRow = Backbone.View.extend({
     }
 })
 
-window.webmoneyDetailsPanel = Backbone.View.extend({
-    tagName: "div",
-    className: "panel panel-info",
+window.webmoneyDetailsPanel = panelInfo.extend({
     initialize: function () {
         this.render();
     },

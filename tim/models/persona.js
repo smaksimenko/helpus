@@ -133,3 +133,22 @@ window.charityFoundationsCollection = Backbone.Collection.extend({
     url: "/charityFoundations",
     model:charityFoundationsModel
 })
+
+window.advertModel = Backbone.Model.extend({
+    urlRoot: "/adverts",
+    default: {
+        id: null,
+        actionDate: null,
+        addDate: null,
+        personaId: null,
+        caption: null,
+        link: null,
+        text: null,
+        photo: false,
+        advertType: null
+    }
+})
+window.advertCollection = Backbone.Collection.extend({
+    url: "/adverts",
+    model:advertModel
+})

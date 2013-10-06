@@ -20,19 +20,9 @@ window.contactspage = Backbone.View.extend({
             panelFoundations.$el.append((new socialTable({social: this.options.foundations})).el);
             this.$el.find('#panelsPlaceholder').append(panelFoundations.el);
         }
-
     }
 })
-window.panelDefault = Backbone.View.extend({
-    className: "panel panel-default",
-    initialize: function () {
 
-        this.render()
-    },
-    render: function () {
-        this.$el.html(this.template(this.options));
-    }
-})
 
 window.contactsTable = Backbone.View.extend({
     tagName: "table",

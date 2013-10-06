@@ -25,3 +25,7 @@ window.CURRENCY = {
 
 
 }
+window.ADVERT_TYPES = {
+    action: 0,
+    news: 1
+}

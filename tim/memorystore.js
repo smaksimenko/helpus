@@ -234,6 +234,17 @@ window.store = {
             text: "Корпорация клоунов 'Оранжевое настроение' проводит БЛАГОТВОРИТЕЛЬНЫЙ детский клоун-концерт 'ДЛЯ ТИМОШКИ'. Цену билета каждый зритель определяет сам. Все средства, собранные в ходе мероприятия будут переданы на лечение Салтановского Тимошки.</p> <p>Мероприятие состоится <strong>6 октября в 12:00 по адресу: Екатериниская площадь, 6, театр-кабаре 'Буффон'</strong>",
             photo: false,
             advertType: ADVERT_TYPES.action
+        };
+        this.advert[3] = {
+            id: 3,
+            actionDate: new Date(2013, 9, 6).getTime(),
+            addDate: new Date(2013, 9, 4).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "TEST",
+            photo: false,
+            advertType: ADVERT_TYPES.news
         }
 
 

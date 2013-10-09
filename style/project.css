@@ -74,3 +74,23 @@
 .padding-left-small {
     padding-left: 5px;
 }
+
+.margin-bottom-small {
+    margin-bottom: 5px;
+}
+.margin-top-small {
+    margin-top: 5px;
+}
+.margin-top-middle{
+    margin-top: 10px;
+}
+.margin-bottom-middle {
+    margin-bottom: 10px;
+}
+.margin-top-large{
+    margin-top: 20px;
+}
+.margin-bottom-large{
+    margin-bottom: 20px;
+}
+

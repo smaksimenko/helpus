@@ -237,15 +237,37 @@ window.store = {
         };
         this.advert[3] = {
             id: 3,
-            actionDate: new Date(2013, 9, 6).getTime(),
-            addDate: new Date(2013, 9, 4).getTime(),
+            actionDate: new Date(2013, 9, 7).getTime(),
+            addDate: new Date(2013, 9, 7).getTime(),
             personaId: 1,
             caption: null,
             link: null,
-            text: "TEST",
+            text: 'Благотворительная акция "СпасиБо, Одесса!" принесла Тимоше 6599 грн. Спасибо всем, кто участвовал в акции и кто помогал ей состояться!',
             photo: false,
             advertType: ADVERT_TYPES.news
-        }
+        };
+        this.advert[4] = {
+            id: 4,
+            actionDate: new Date(2013, 9, 9).getTime(),
+            addDate: new Date(2013, 9, 9).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: 'Клоун-концерт собрал для Тимоши 1523 гривны, включая деньги, которые пожертвовали взамен на выпечку, её предлагали после концерта.!',
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[5] = {
+            id: 5,
+            actionDate: new Date(2013, 9, 13).getTime(),
+            addDate: new Date(2013, 9, 13).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Корпорация клоунов 'Оранжевое настроение' проводит ЕЩЕ ОДИН БЛАГОТВОРИТЕЛЬНЫЙ детский клоун-концерт 'ДЛЯ ТИМОШКИ'. Цену билета каждый зритель определяет сам. Все средства, собранные в ходе мероприятия будут переданы на лечение Салтановского Тимошки.</p> <p>Мероприятие состоится <strong>13 октября в 12:00 по адресу: Екатериниская площадь, 6, театр-кабаре 'Буффон'</strong>",
+            photo: false,
+            advertType: ADVERT_TYPES.action
+        };
 
 
         this.lastId = 24;

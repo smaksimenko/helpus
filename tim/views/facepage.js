@@ -27,8 +27,8 @@ window.advertsView = Backbone.View.extend({
     render: function () {
         var _self = this;
         this.$el.html(this.template(this.options));
-        var actions = this.options.adverts.where({advertType: ADVERT_TYPES.action});
-        var news = this.options.adverts.where({advertType: ADVERT_TYPES.news});
+        var actions = this.options.adverts.where({advertType: ADVERT_TYPES.action}).reverse();
+        var news = this.options.adverts.where({advertType: ADVERT_TYPES.news}).reverse();
         if (actions.length != 0) {
             for (var _i=0; _i<(actions.length<5?actions.length:5); _i++){
                     var date = $.datepicker.formatDate("dd/mm/yy", new Date(actions[_i].get('actionDate')));
@@ -53,7 +53,7 @@ window.advertsView = Backbone.View.extend({
         } else if (actions.length==0){
 
         } else {
-            this.switchAdvertsPanelToNews();
+            this.switchAdvertsPanelToAction();
         }
     },
     switchAdvertsPanelToAction: function(){

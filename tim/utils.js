@@ -31,7 +31,17 @@ window.utils = {
     },
     formatNumber: function(num){
        return $.formatNumber(parseInt(num), {format: "#,###,###", locale: "ru"})
+    },
+    millisecToSec: function(ms){
+        return ms/(1000);
+    },
+    millisecToMin: function(ms){
+        return ms/(1000*60);
+    },
+    millisecToHour: function(ms){
+        return ms/(1000*60*60);
     }
+
 
 
 //TODO age counter

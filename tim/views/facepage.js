@@ -31,7 +31,8 @@ window.advertsView = Backbone.View.extend({
         var news = this.options.adverts.where({advertType: ADVERT_TYPES.news}).reverse();
         if (actions.length != 0) {
             for (var _i=0; _i<(actions.length<5?actions.length:5); _i++){
-                    var date = $.datepicker.formatDate("dd/mm/yy", new Date(actions[_i].get('actionDate')));
+                    var DO = new Date(actions[_i].get('actionDate'))
+                    var date = $.datepicker.formatDate("dd/mm/yy", DO);
                     _self.$el.find("#advertsRow").append(new panelWarning({title: "Акции: " + date, body: actions[_i].get('text')}).el)
 
             }
@@ -39,8 +40,7 @@ window.advertsView = Backbone.View.extend({
             this.$el.find("#showActionsBtn").attr("disabled", "disabled");
         }
         if (news.length != 0) {
-            for (var _i=0; _i<(news.length<5?news.length:5); _i++){
-
+            for (var _i=0; _i<(news.length<QUANTITY_OF_SHOWN_NEWS?news.length:QUANTITY_OF_SHOWN_NEWS); _i++){
                     var date = $.datepicker.formatDate("dd/mm/yy", new Date(news[_i].get('actionDate')));
                     _self.$el.find("#advertsRow").append(new panelInfo({title: "Новости: " + date, body: news[_i].get('text')}).el)
             }
@@ -53,7 +53,17 @@ window.advertsView = Backbone.View.extend({
         } else if (actions.length==0){
 
         } else {
-            this.switchAdvertsPanelToAction();
+            var lastAction = _.max(actions, function(m){
+               return m.get('actionDate')
+            })
+            var delta = (new Date().getTime() - lastAction.get('actionDate'));
+            if (delta > ADVERTS_EXPIRED_HOURS){
+                this.switchAdvertsPanelToNews();
+            } else {
+                this.switchAdvertsPanelToAction();
+            }
+
+
         }
     },
     switchAdvertsPanelToAction: function(){

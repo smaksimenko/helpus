@@ -91,7 +91,7 @@ var AppRouter = Backbone.Router.extend({
         $(".nav li").removeClass('active');
         $('#nav_documents').addClass("active");
 
-        $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей. Ознакомиться с документами Вы можете перейдя по ссылкам из раздела <a href='#contacts'> контакты</a></div>")
+        $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей. Ознакомиться с документами Вы можете перейдя по ссылкам из раздела <a href='#contacts'> контакты</a>, или сразу на соответствующий <a href='http://forum.od.ua/showthread.php?t=2029026&p=41559180&viewfull=1#post41559180'>раздел Одесского форума</a></div>")
     }
 
 });

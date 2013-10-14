@@ -65,6 +65,14 @@ window.store = {
             collected: 36911.71,
             toDate: new Date(2013, 9, 6).getTime()
         };
+        this.financeState[5] = {
+            id: 5,
+            personaId: 1,
+            currency: 1,
+            total: 120000,
+            collected: 42213.57,
+            toDate: new Date(2013, 9, 11).getTime()
+        };
         this.financeBank[1] = {
             id: 1,
             forCountry: "Украина",
@@ -106,6 +114,7 @@ window.store = {
             preset: "ОАО 'Сбербанк России', Москва, РФ \n БИК 044525225, \n К/C 30101810400000000225 \n   ИНН 7707083893 \n СВИФТ; SABRRUMM \n /30111810100000000540 \n АО 'СБЕРБАНК РОССИИ' /n Киев, Украина 26203000453411 Салтановская Елена Олеговна",
             comment: "На данный счёт,пополнить можно рубли, только с карточки на карточку, в любом банке России"
         };
+
 
         this.financeBank[5] = {
             id: 5,
@@ -213,6 +222,13 @@ window.store = {
             link: "http://spasibo.od.ua/sos-%D0%BC%D0%BB%D0%B0%D0%B4%D0%B5%D0%BD%D0%B5%D1%86-%D1%82%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B9-%D1%81%D0%B0%D0%BB%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9-%D0%B2-%D0%B1%D0%BE%D1%80/",
             alias: "Перейти на сайт"
         };
+        this.foundations[3] = {
+            id: 3,
+            personaId: 1,
+            name: "Благотворительная организация 'Благовещение'",
+            link: "http://blagovest.od.ua/actual/207-saltanovskiy-timofey.html",
+            alias: "Перейти на сайт"
+        };
         this.advert[1] = {
             id: 1,
             actionDate: new Date(2013, 9, 6).getTime(),
@@ -226,7 +242,7 @@ window.store = {
         };
         this.advert[2] = {
             id: 2,
-            actionDate: new Date(2013, 9, 6).getTime(),
+            actionDate: new Date(2013, 9, 6, 12,0).getTime(),
             addDate: new Date(2013, 9, 4).getTime(),
             personaId: 1,
             caption: null,
@@ -259,12 +275,45 @@ window.store = {
         };
         this.advert[5] = {
             id: 5,
-            actionDate: new Date(2013, 9, 13).getTime(),
+            actionDate: new Date(2013, 9, 13, 12, 0).getTime(),
             addDate: new Date(2013, 9, 13).getTime(),
             personaId: 1,
             caption: null,
             link: null,
             text: "Корпорация клоунов 'Оранжевое настроение' проводит ЕЩЕ ОДИН БЛАГОТВОРИТЕЛЬНЫЙ детский клоун-концерт 'ДЛЯ ТИМОШКИ'. Цену билета каждый зритель определяет сам. Все средства, собранные в ходе мероприятия будут переданы на лечение Салтановского Тимошки.</p> <p>Мероприятие состоится <strong>13 октября в 12:00 по адресу: Екатериниская площадь, 6, театр-кабаре 'Буффон'</strong>",
+            photo: false,
+            advertType: ADVERT_TYPES.action
+        };
+        this.advert[6] = {
+            id: 6,
+            actionDate: new Date(2013, 9, 10).getTime(),
+            addDate: new Date(2013, 9, 10).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Сегодня в Свято-Успенском монастыре  БО 'СПАСИБО' инкассировала из ящичков Тимоши вместе с батюшкой Лонгином <strong>4000 грн</strong>.<br />Благодарим Владыку Агафангела и всю братию Успенского монастыря , что помогают собирать денежку для малыша. ",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[7] = {
+            id: 7,
+            actionDate: new Date(2013, 9, 12).getTime(),
+            addDate: new Date(2013, 9, 12).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Волонтерами БФ 'Благовещение' 2 и 5 октября проведен ряд инкассаций боксов для Тимофея Салтановского: в Спасо-Преображенском соборе, Соборе Святой Троицы, Пантелеимоновском, Иверском и Свято-Ильинском монастырях. Сумма пожертвований составила: <strong>16837 грн., 216 долл., 5 евро, 1010 рублей.</strong>",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[8] = {
+            id: 8,
+            actionDate: new Date(2013, 9, 19, 12, 00).getTime(),
+            addDate: new Date(2013, 9, 14).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "<strong>19 октября, парк им. Горького, День открытия фонтана,стартуем в 12.00</strong><p>Акция 'Время Добрых Дел' в поддержку очаровательного малыша, Тимофея Салтановского!!!</p><p>В программе как всегда домашние вкусности, хенд-мейд, шоу программа для деток от наших замечательных друзей 'Фантазеркины', так же у вас будет возможность сфотографироваться с героями шоу на память!</p><p>Будем рады видеть всех желающих!!!! Обещаем будет весело! </p><small>Очень ждем помощи от наших кулинаров и мастериц! <a href='http://forum.od.ua/showthread.php?t=1621593&p=42362778#post42362778'>Подробнее здесь</a></small>",
             photo: false,
             advertType: ADVERT_TYPES.action
         };

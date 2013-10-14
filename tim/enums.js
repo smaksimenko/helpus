@@ -29,3 +29,5 @@ window.ADVERT_TYPES = {
     action: 0,
     news: 1
 }
+window.ADVERTS_EXPIRED_HOURS = 4;
+window.QUANTITY_OF_SHOWN_NEWS = 5;

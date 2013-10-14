@@ -31,7 +31,8 @@ window.advertsView = Backbone.View.extend({
         var news = this.options.adverts.where({advertType: ADVERT_TYPES.news}).reverse();
         if (actions.length != 0) {
             for (var _i=0; _i<(actions.length<5?actions.length:5); _i++){
-                    var date = $.datepicker.formatDate("dd/mm/yy", new Date(actions[_i].get('actionDate')));
+                    var DO = new Date(actions[_i].get('actionDate'))
+                    var date = $.datepicker.formatDate("dd/mm/yy", DO);
                     _self.$el.find("#advertsRow").append(new panelWarning({title: "Акции: " + date, body: actions[_i].get('text')}).el)
 
             }

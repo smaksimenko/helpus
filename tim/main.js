@@ -90,8 +90,18 @@ var AppRouter = Backbone.Router.extend({
     documentsPage: function () {
         $(".nav li").removeClass('active');
         $('#nav_documents').addClass("active");
+        this.pageData = {};
+        this.pageData.documents = new documentCollection();
+        this.pageData.documentsImages = new imageDocumentCollection();
+        var _self = this;
+        utils.fetchAll({toFetch: this.pageData,success: function(){
+            $("#main_container").html(new documentsPage(_self.pageData).el);
+        }})
 
-        $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей. Ознакомиться с документами Вы можете перейдя по ссылкам из раздела <a href='#contacts'> контакты</a>, или сразу на соответствующий <a href='http://forum.od.ua/showthread.php?t=2029026&p=41559180&viewfull=1#post41559180'>раздел Одесского форума</a></div>")
+
+
+
+      //  $("#main_container").html("<div class='alert alert-info'>Мы работаем над этой страницей. Ознакомиться с документами Вы можете перейдя по ссылкам из раздела <a href='#contacts'> контакты</a>, или сразу на соответствующий <a href='http://forum.od.ua/showthread.php?t=2029026&p=41559180&viewfull=1#post41559180'>раздел Одесского форума</a></div>")
     }
 
 });
@@ -108,7 +118,8 @@ utils.loadTemplate(['navigation',
     'contactsTable',
     'socialTable',
     'advertsView',
-    'panelView'
+    'panelView',
+    'documentsPage'
 
 ], function () {
 

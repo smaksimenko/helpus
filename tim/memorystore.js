@@ -10,6 +10,9 @@ window.store = {
     social: {},
     foundations: {},
     advert: {},
+    document:{},
+    imageDocument:{},
+
     populate: function () {
 
         this.persona[1] = {
@@ -325,6 +328,74 @@ window.store = {
             photo: false,
             advertType: ADVERT_TYPES.action
         };
+        this.document[1] ={
+            id: 1,
+            personaId: 1,
+            name: "Паспорт матери",
+            text: "Салтановская Олена Олеговна, родилась 20 апреля 1981 года, г. Одесса, Украина",
+            documentType: DOCUMENTS_TYPES.mainDocs
+        };
+        this.imageDocument[1] = {
+            id: 1,
+            personaId: 1,
+            name: "Паспорт",
+            text: "",
+            documentId:1,
+            url: "../images/1/docs/1.jpg"
+        }
+        this.document[2] ={
+            id: 2,
+            personaId: 1,
+            name: "Свидетельство о рождении",
+            text: "Салтановский Тимофей Максимович, родился 3-го ноября 2012 года в г. Одесса",
+            documentType: DOCUMENTS_TYPES.mainDocs
+        };
+        this.imageDocument[2] = {
+            id: 2,
+            personaId: 1,
+            name: "Свидетельство о рождении",
+            text: "",
+            documentId:2,
+            url: "../images/1/docs/2.jpg"
+        };
+        this.document[3] ={
+            id: 3,
+            personaId: 1,
+            name: "Выписка из истории болезни",
+            text: "",
+            documentType: DOCUMENTS_TYPES.medicalDocs
+        };
+        this.imageDocument[3] = {
+            id: 3,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:3,
+            url: "../images/1/docs/3.jpg"
+        };
+        this.imageDocument[4] = {
+            id: 4,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:3,
+            url: "../images/1/docs/4.jpg"
+        };
+        this.document[4] ={
+            id: 4,
+            personaId: 1,
+            name: "Счет из клиники",
+            text: "",
+            documentType: DOCUMENTS_TYPES.financeDocs
+        };
+        this.imageDocument[5] = {
+            id: 5,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:4,
+            url: "../images/1/docs/5.jpg"
+        };
 
 
         this.lastId = 24;
@@ -384,7 +455,11 @@ Backbone.sync = function (method, model, options) {
                 resp = model.id ? store.find(model, "foundations") : store.findAll("foundations");
             } else if (model instanceof advertCollection) {
                 resp = model.id ? store.find(model, "advert") : store.findAll("advert");
-            } else {
+            } else if (model instanceof documentCollection) {
+                resp = model.id ? store.find(model, "document") : store.findAll("document");
+            }else if (model instanceof imageDocumentCollection) {
+                resp = model.id ? store.find(model, "imageDocument") : store.findAll("imageDocument");
+            }else {
                 console.log(model)
             }
             // resp = model.id ? store.find(model) : store.findAll();

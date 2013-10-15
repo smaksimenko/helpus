@@ -31,3 +31,18 @@ window.ADVERT_TYPES = {
 }
 window.ADVERTS_EXPIRED_HOURS = 4;
 window.QUANTITY_OF_SHOWN_NEWS = 5;
+window.DOCUMENTS_TYPES = {
+    mainDocs: 0,
+    medicalDocs: 1,
+    financeDocs: 2,
+    reportDocs: 3
+}
+window.DOCUMENTS_TABS = {};
+DOCUMENTS_TABS[DOCUMENTS_TYPES.mainDocs]={};
+DOCUMENTS_TABS[DOCUMENTS_TYPES.mainDocs].tabId = "mainDocs";
+DOCUMENTS_TABS[DOCUMENTS_TYPES.medicalDocs]={};
+DOCUMENTS_TABS[DOCUMENTS_TYPES.medicalDocs].tabId = "medicalDocs";
+DOCUMENTS_TABS[DOCUMENTS_TYPES.financeDocs] = {};
+DOCUMENTS_TABS[DOCUMENTS_TYPES.financeDocs].tabId = "financeDocs";
+DOCUMENTS_TABS[DOCUMENTS_TYPES.reportDocs] = {};
+DOCUMENTS_TABS[DOCUMENTS_TYPES.reportDocs].tabId = "reportDocs";

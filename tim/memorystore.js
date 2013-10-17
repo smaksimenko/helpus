@@ -336,7 +336,30 @@ window.store = {
             personaId: 1,
             caption: null,
             link: null,
-            text: "Немецкий фонд Ein Herz fur Kinder выделил для Тимоши 10 000 евро, которые будут перечислены при наличии остальной суммы! Гранд уже отправлен в клинику.",
+            text: "Немецкий фонд Ein Herz fur Kinder выделил для Тимоши <strong>10 000 евро</strong>, которые будут перечислены при наличии остальной суммы! Гранд уже отправлен в клинику.",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[10] = {
+            id: 10,
+            actionDate: new Date(2013, 9, 17).getTime(),
+            addDate: new Date(2013, 9, 17).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "БО 'Спасибо' проинкассированла 2 ящичка на Тимошу в Свято-Успенском мужском монастыре. В них было <strong>1774</strong> грн. Спасибо всем жертвователям за помощь!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
+        this.advert[11] = {
+            id: 11,
+            actionDate: new Date(2013, 9, 17).getTime(),
+            addDate: new Date(2013, 9, 17).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "БО 'Благовещение' проинкассированла ящики в Спасо-Преображенском соборе. Собранная сумма составила: <strong>9649 грн, 105 $; 1250 рублей и 15 евро</strong>. Спаси Господи всех пожертвовавших для Тимофея Салтановского!",
             photo: false,
             advertType: ADVERT_TYPES.news
         };
@@ -409,6 +432,22 @@ window.store = {
             documentId:4,
             url: "../images/1/docs/5.jpg"
         };
+        this.document[5] ={
+            id: 5,
+            personaId: 1,
+            name: "Гарантия фонда Ein Herz fur Kinder",
+            text: "Немецкий фонд обязуется оплатить 10 000 евро на счет клиники про условии предоплаты 110 000 евро",
+            documentType: DOCUMENTS_TYPES.financeDocs
+        };
+        this.imageDocument[6] = {
+            id: 6,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:5,
+            url: "../images/1/docs/6.png"
+        };
+
 
 
         this.lastId = 24;

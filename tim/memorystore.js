@@ -328,6 +328,19 @@ window.store = {
             photo: false,
             advertType: ADVERT_TYPES.action
         };
+
+        this.advert[9] = {
+            id: 9,
+            actionDate: new Date(2013, 9, 17).getTime(),
+            addDate: new Date(2013, 9, 17).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Немецкий фонд Ein Herz fur Kinder выделил для Тимоши 10 000 евро, которые будут перечислены при наличии остальной суммы! Гранд уже отправлен в клинику.",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
         this.document[1] ={
             id: 1,
             personaId: 1,

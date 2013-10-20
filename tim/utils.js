@@ -1,12 +1,12 @@
 window.utils = {
 
     // Asynchronously load templates located in separate .html files
-    loadTemplate: function(views, callback) {
+    loadTemplate: function (views, callback) {
 
         var deferreds = [];
-        $.each(views, function(index, view) {
+        $.each(views, function (index, view) {
             if (window[view]) {
-                deferreds.push($.get('tpl/' + view + '.html', function(data) {
+                deferreds.push($.get('tpl/' + view + '.html', function (data) {
                     window[view].prototype.template = _.template(data);
                 }));
             } else {
@@ -29,17 +29,28 @@ window.utils = {
             }})
         }
     },
-    formatNumber: function(num){
-       return $.formatNumber(parseInt(num), {format: "#,###,###", locale: "ru"})
+    blink: (function () {
+        var blinkList = [];
+        return function (id) {
+            if (blinkList.indexOf(id) == -1) {
+                blinkList.push(id);
+                setInterval(function () {
+                    $("#" + id).toggle();
+                }, 1000)
+            }
+        }
+    })(),
+    formatNumber: function (num) {
+        return $.formatNumber(parseInt(num), {format: "#,###,###", locale: "ru"})
     },
-    millisecToSec: function(ms){
-        return ms/(1000);
+    millisecToSec: function (ms) {
+        return ms / (1000);
     },
-    millisecToMin: function(ms){
-        return ms/(1000*60);
+    millisecToMin: function (ms) {
+        return ms / (1000 * 60);
     },
-    millisecToHour: function(ms){
-        return ms/(1000*60*60);
+    millisecToHour: function (ms) {
+        return ms / (1000 * 60 * 60);
     }
 
 

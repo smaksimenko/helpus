@@ -371,6 +371,29 @@ window.store = {
             photo: false,
             advertType: ADVERT_TYPES.news
         };
+        this.advert[12] = {
+            id: 12,
+            actionDate: new Date(2013, 9, 19).getTime(),
+            addDate: new Date(2013, 9, 19).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "На канале 1+1 в новостях ТСН вышел сюжет про Тимофея, посмотреть можно здесь: <a href='http://ru.tsn.ua/video/video-novini/dlya-togo-chtoby-spasti-zhizn-godovalomu-timofeyu-ne-hvataet-tolko-neravnodushiya-lyudey.html?type=1560'>перейти на страницу ТСН</a>",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[13] = {
+            id: 13,
+            actionDate: new Date(2013, 9, 19).getTime(),
+            addDate: new Date(2013, 9, 19).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Сегодня в парке Горького состоялась Благотворительная акция 'Время добрых дел' в помощь Тимофею Салтановскому. Собрали и передали папе Тимоши (он тоже присутствовал на акции) - <strong>13600грн</strong>!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
 
         this.document[1] ={
             id: 1,

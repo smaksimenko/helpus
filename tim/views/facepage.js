@@ -25,6 +25,8 @@ window.advertsView = Backbone.View.extend({
         "click #showNewsBtn": "switchAdvertsPanelToNews"
     },
     render: function () {
+
+
         var _self = this;
         this.$el.html(this.template(this.options));
         this.actions = this.options.adverts.where({advertType: ADVERT_TYPES.action}).reverse();
@@ -49,18 +51,22 @@ window.advertsView = Backbone.View.extend({
         if (localStorage.getItem('lastNews')) {
             if (localStorage.getItem('lastNews') != this.news.length) {
                 this.$el.find("#showNewsBtn span").removeClass('hide');
+                utils.blink("showNewsBtn span");
             }
         } else {
             localStorage.setItem('lastNews', 1);
             this.$el.find("#showNewsBtn span").removeClass('hide');
+            utils.blink("showNewsBtn span");
         }
         if (localStorage.getItem('lastAction')) {
             if (localStorage.getItem('lastAction') != this.actions.length) {
                 this.$el.find("#showActionsBtn span").removeClass('hide');
+                utils.blink("showActionsBtn span");
             }
         } else {
             localStorage.setItem('lastAction', 1);
             this.$el.find("#showActionsBtn span").removeClass('hide');
+            utils.blink("showActionsBtn span");
         }
 
 

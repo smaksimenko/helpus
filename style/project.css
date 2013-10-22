@@ -93,3 +93,6 @@
 .margin-bottom-large{
     margin-bottom: 20px;
 }
+.invisible {
+    visibility: hidden;
+}

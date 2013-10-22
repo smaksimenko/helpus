@@ -35,12 +35,14 @@ window.utils = {
             if (blinkList.indexOf(id) == -1) {
                 blinkList.push(id);
                 setInterval(function () {
-                    $("#" + id).toggle();
+                    //$("#" + id).toggle();
+                    $("#" + id).toggleClass('invisible');
                 }, 1000)
             }
         }
     })(),
     formatNumber: function (num) {
+        if (!num) {return 0};
         return $.formatNumber(parseInt(num), {format: "#,###,###", locale: "ru"})
     },
     millisecToSec: function (ms) {

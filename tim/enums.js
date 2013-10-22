@@ -46,3 +46,44 @@ DOCUMENTS_TABS[DOCUMENTS_TYPES.financeDocs] = {};
 DOCUMENTS_TABS[DOCUMENTS_TYPES.financeDocs].tabId = "financeDocs";
 DOCUMENTS_TABS[DOCUMENTS_TYPES.reportDocs] = {};
 DOCUMENTS_TABS[DOCUMENTS_TYPES.reportDocs].tabId = "reportDocs";
+
+window.COLLECTION_STATE  = {
+    preOpened: 0,
+    opened: 1,
+    paused: 2,
+    stopped: 3,
+    finished: 4,
+    reopened: 5
+}
+
+window.COLLECTION_STATE_DATA = {};
+window.COLLECTION_STATE_DATA[COLLECTION_STATE.preOpened] = {
+    message: "Мы собираемся официально открыть сбор на днях, реквизиты и общие данные будут уточнены.",
+    messageStyle: "alert-warning",
+    accounts: true
+},
+window.COLLECTION_STATE_DATA[COLLECTION_STATE.opened] = {
+    message: "Сбор открыт.",
+    messageStyle: "alert-info",
+    accounts: true
+}
+window.COLLECTION_STATE_DATA[COLLECTION_STATE.stopped] = {
+    message: "Сбор остановлен. Причиной может быть отсутствие документов, отчетов о сборе или нарушения правил проекта",
+    messageStyle: "alert-danger",
+    accounts: false
+}
+window.COLLECTION_STATE_DATA[COLLECTION_STATE.paused] = {
+    message: "Сбор временно приостановлен. Причиной может уточнение диагноза, изменение места лечения или других обстоятельств",
+    messageStyle: "alert-warning",
+    accounts: false
+}
+window.COLLECTION_STATE_DATA[COLLECTION_STATE.finished] = {
+    message: "Сбор успешно завершен, необходимая сумма собрана! Спасибо всем!",
+    messageStyle: "alert-success",
+    accounts: false
+}
+window.COLLECTION_STATE_DATA[COLLECTION_STATE.paused] = {
+    message: "Сбор открыт повторно. В связи с новыми обстоятельствами сбор снова открыт",
+    messageStyle: "alert-danger",
+    accounts: false
+}

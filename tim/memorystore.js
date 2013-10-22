@@ -23,7 +23,8 @@ window.store = {
             livingCountry: "Украина",
             livingPlace: "Одесса",
             diagnosis: "болезнь Гиршпрунга, тотальной формы (рабочего кишечника всего 50 см). Илеостома. синдром короткой кишки. Носитель кишечных свищей. Белково-энергетическая недостаточность 2 степени. Перитонит. Некроз восходящей ободочной кишки",
-            treatmentId: 1
+            treatmentId: 1,
+            collectionState: COLLECTION_STATE.finished
         };
         this.treatment[1] = {
             id: 1,
@@ -92,6 +93,14 @@ window.store = {
             collected: 58628.35,
             toDate: new Date(2013, 9, 16).getTime()
     };
+        this.financeState[8] = {
+            id: 8,
+            personaId: 1,
+            currency: 1,
+            total: 120000,
+            collected: 124023.4,
+            toDate: new Date(2013, 9, 16).getTime()
+        };
         this.financeBank[1] = {
             id: 1,
             forCountry: "Украина",
@@ -390,6 +399,20 @@ window.store = {
             caption: null,
             link: null,
             text: "Сегодня в парке Горького состоялась Благотворительная акция 'Время добрых дел' в помощь Тимофею Салтановскому. Собрали и передали папе Тимоши (он тоже присутствовал на акции) - <strong>13600грн</strong>!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[14] = {
+            id: 14,
+            actionDate: new Date(2013, 9, 21).getTime(),
+            addDate: new Date(2013, 9, 21).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Добрый волшебник для Тимоши нашелся и откликнулся на мольбу матери помочь!!!<strong>650 000</strong> грн " +
+                "были переведены в помощь Тимоше Салтановскому! <strong>(шестьсот пятьдесят тысяч гривен)</strong> " +
+                "От участников сбора и всех родных и близких Тимоши благодарим этого человека за проявленное милосердие и такой огромный вклад в жизнь этого маленького мальчика! " +
+                "Мы будем молиться за этого человека, чтобы Господь Бог восполнил его доброту и сердечность. Желаем этому волшебнику и его близким здоровья и пусть добрые дела вернутся к нему сторицей!",
             photo: false,
             advertType: ADVERT_TYPES.news
         };

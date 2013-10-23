@@ -6,13 +6,13 @@
                style='margin-top: -50px; margin-right: 10px; position:relative; z-index:50000000'>Хочу помочь
                 сейчас!</a>
             <script language='javascript'>
-                $("#helpAction").popover({
-                    html: true,
-                    placement: "top",
-                    trigger: 'hover',
-                    content: '<strong>Россия:</strong> можно править отправить СМС на номер 3116 с текстом "meg&nbsp;9257102707&nbsp;сумма"'
-                });
-
+//                $("#helpAction").popover({
+//                    html: true,
+//                    placement: "top",
+//                    trigger: 'hover',
+//                    content: '<strong>Россия:</strong> можно править отправить СМС на номер 3116 с текстом "meg&nbsp;9257102707&nbsp;сумма"'
+//                });
+//
 
             </script>
         </div>
@@ -84,7 +84,8 @@
             <div class="panel panel-danger">
                 <%var lastFinance = financeStateCollection.models[financeStateCollection.length-1];
                 var lastFinanceCurrency = window.CURRENCY.catalog[lastFinance.get('currency')];
-                var left = lastFinance.get('total') - lastFinance.get('collected')
+                var left = (lastFinance.get('total') - lastFinance.get('collected'))<0?0:(lastFinance.get('total') - lastFinance.get('collected'));
+
                 var timeLeft = (treatmentCollection.models[0].get('treatmentStart') - new
                 Date().getTime())/(60*60*24*1000);
                 var popover="<table class='table'>";
@@ -134,6 +135,13 @@
         <div id='greeting'>
 
             <div class="row well">
+                <%
+                var _colState = persona.get("collectionState");
+                    if (_colState != COLLECTION_STATE.opened){%>
+                        <div class="alert <%=COLLECTION_STATE_DATA[_colState].messageStyle%>">
+                            <span class="glyphicon glyphicon-pushpin"></span> <%=COLLECTION_STATE_DATA[_colState].message%></div>
+
+                <%}%>
                 <div class="alert alert-warning"><small><span class="glyphicon glyphicon-pushpin"></span> Текст обращения отредактирован волонтером Одесского форума (14.10.2013). Стилистика и орфография автора сохранена.</small>
                 </div>
                 <p>За первые 10 дней своей жизни Тимоша перенёс 3 операции, 48 дней реанимации...</p>
@@ -152,5 +160,6 @@
     </div>
 </div>
 <script>
-
+COLLECTION_STATE.opened
+    COLLECTION_STATE_DATA.
 </script>

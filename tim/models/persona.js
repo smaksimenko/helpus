@@ -9,7 +9,8 @@ window.personaModel = Backbone.Model.extend({
         livingPlace: "",
         diagnosis: "",
         treatmentId: "",
-        financeStateId: ""
+        financeStateId: "",
+        collectionState: window.COLLECTION_STATE.preOpened
     }
 })
 window.treatmentModel = Backbone.Model.extend({
@@ -151,4 +152,33 @@ window.advertModel = Backbone.Model.extend({
 window.advertCollection = Backbone.Collection.extend({
     url: "/adverts",
     model:advertModel
+})
+window.documentModel = Backbone.Model.extend({
+    urlRoot: "/documents",
+    default: {
+        id: null,
+        personaId: null,
+        name: null,
+        text: null,
+        documentType:null
+    }
+})
+window.documentCollection = Backbone.Collection.extend({
+    url: "/documents",
+    model:documentModel
+})
+window.imageDocumentModel =  Backbone.Model.extend({
+    urlRoot: "/documentImage",
+    default: {
+        id: null,
+        personaId: null,
+        name: null,
+        text: null,
+        documentId:null,
+        url:null
+    }
+})
+window.imageDocumentCollection=  Backbone.Collection.extend({
+    url: "/documentImage",
+    model: imageDocumentModel
 })

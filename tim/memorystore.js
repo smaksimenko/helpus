@@ -10,6 +10,9 @@ window.store = {
     social: {},
     foundations: {},
     advert: {},
+    document:{},
+    imageDocument:{},
+
     populate: function () {
 
         this.persona[1] = {
@@ -20,7 +23,8 @@ window.store = {
             livingCountry: "Украина",
             livingPlace: "Одесса",
             diagnosis: "болезнь Гиршпрунга, тотальной формы (рабочего кишечника всего 50 см). Илеостома. синдром короткой кишки. Носитель кишечных свищей. Белково-энергетическая недостаточность 2 степени. Перитонит. Некроз восходящей ободочной кишки",
-            treatmentId: 1
+            treatmentId: 1,
+            collectionState: COLLECTION_STATE.finished
         };
         this.treatment[1] = {
             id: 1,
@@ -72,6 +76,30 @@ window.store = {
             total: 120000,
             collected: 42213.57,
             toDate: new Date(2013, 9, 11).getTime()
+        };
+        this.financeState[6] = {
+            id: 6,
+            personaId: 1,
+            currency: 1,
+            total: 120000,
+            collected: 45946.18,
+            toDate: new Date(2013, 9, 13).getTime()
+        };
+        this.financeState[7] = {
+            id: 7,
+            personaId: 1,
+            currency: 1,
+            total: 120000,
+            collected: 58628.35,
+            toDate: new Date(2013, 9, 16).getTime()
+    };
+        this.financeState[8] = {
+            id: 8,
+            personaId: 1,
+            currency: 1,
+            total: 120000,
+            collected: 124023.4,
+            toDate: new Date(2013, 9, 16).getTime()
         };
         this.financeBank[1] = {
             id: 1,
@@ -318,6 +346,163 @@ window.store = {
             advertType: ADVERT_TYPES.action
         };
 
+        this.advert[9] = {
+            id: 9,
+            actionDate: new Date(2013, 9, 17).getTime(),
+            addDate: new Date(2013, 9, 17).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Немецкий фонд Ein Herz fur Kinder выделил для Тимоши <strong>10 000 евро</strong>, которые будут перечислены при наличии остальной суммы! Гранд уже отправлен в клинику.",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[10] = {
+            id: 10,
+            actionDate: new Date(2013, 9, 17).getTime(),
+            addDate: new Date(2013, 9, 17).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "БО 'Спасибо' проинкассированла 2 ящичка на Тимошу в Свято-Успенском мужском монастыре. В них было <strong>1774</strong> грн. Спасибо всем жертвователям за помощь!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
+        this.advert[11] = {
+            id: 11,
+            actionDate: new Date(2013, 9, 17).getTime(),
+            addDate: new Date(2013, 9, 17).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "БО 'Благовещение' проинкассированла ящики в Спасо-Преображенском соборе. Собранная сумма составила: <strong>9649 грн, 105 $; 1250 рублей и 15 евро</strong>. Спаси Господи всех пожертвовавших для Тимофея Салтановского!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[12] = {
+            id: 12,
+            actionDate: new Date(2013, 9, 19).getTime(),
+            addDate: new Date(2013, 9, 19).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "На канале 1+1 в новостях ТСН вышел сюжет про Тимофея, посмотреть можно здесь: <a href='http://ru.tsn.ua/video/video-novini/dlya-togo-chtoby-spasti-zhizn-godovalomu-timofeyu-ne-hvataet-tolko-neravnodushiya-lyudey.html?type=1560'>перейти на страницу ТСН</a>",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[13] = {
+            id: 13,
+            actionDate: new Date(2013, 9, 19).getTime(),
+            addDate: new Date(2013, 9, 19).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Сегодня в парке Горького состоялась Благотворительная акция 'Время добрых дел' в помощь Тимофею Салтановскому. Собрали и передали папе Тимоши (он тоже присутствовал на акции) - <strong>13600грн</strong>!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[14] = {
+            id: 14,
+            actionDate: new Date(2013, 9, 21).getTime(),
+            addDate: new Date(2013, 9, 21).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Добрый волшебник для Тимоши нашелся и откликнулся на мольбу матери помочь!!!<strong>650 000</strong> грн " +
+                "были переведены в помощь Тимоше Салтановскому! <strong>(шестьсот пятьдесят тысяч гривен)</strong> " +
+                "От участников сбора и всех родных и близких Тимоши благодарим этого человека за проявленное милосердие и такой огромный вклад в жизнь этого маленького мальчика! " +
+                "Мы будем молиться за этого человека, чтобы Господь Бог восполнил его доброту и сердечность. Желаем этому волшебнику и его близким здоровья и пусть добрые дела вернутся к нему сторицей!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
+
+        this.document[1] ={
+            id: 1,
+            personaId: 1,
+            name: "Паспорт матери",
+            text: "Салтановская Олена Олеговна, родилась 20 апреля 1981 года, г. Одесса, Украина",
+            documentType: DOCUMENTS_TYPES.mainDocs
+        };
+        this.imageDocument[1] = {
+            id: 1,
+            personaId: 1,
+            name: "Паспорт",
+            text: "",
+            documentId:1,
+            url: "../images/1/docs/1.jpg"
+        }
+        this.document[2] ={
+            id: 2,
+            personaId: 1,
+            name: "Свидетельство о рождении",
+            text: "Салтановский Тимофей Максимович, родился 3-го ноября 2012 года в г. Одесса",
+            documentType: DOCUMENTS_TYPES.mainDocs
+        };
+        this.imageDocument[2] = {
+            id: 2,
+            personaId: 1,
+            name: "Свидетельство о рождении",
+            text: "",
+            documentId:2,
+            url: "../images/1/docs/2.jpg"
+        };
+        this.document[3] ={
+            id: 3,
+            personaId: 1,
+            name: "Выписка из истории болезни",
+            text: "",
+            documentType: DOCUMENTS_TYPES.medicalDocs
+        };
+        this.imageDocument[3] = {
+            id: 3,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:3,
+            url: "../images/1/docs/3.jpg"
+        };
+        this.imageDocument[4] = {
+            id: 4,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:3,
+            url: "../images/1/docs/4.jpg"
+        };
+        this.document[4] ={
+            id: 4,
+            personaId: 1,
+            name: "Счет из клиники",
+            text: "",
+            documentType: DOCUMENTS_TYPES.financeDocs
+        };
+        this.imageDocument[5] = {
+            id: 5,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:4,
+            url: "../images/1/docs/5.jpg"
+        };
+        this.document[5] ={
+            id: 5,
+            personaId: 1,
+            name: "Гарантия фонда Ein Herz fur Kinder",
+            text: "Немецкий фонд обязуется оплатить 10 000 евро на счет клиники про условии предоплаты 110 000 евро",
+            documentType: DOCUMENTS_TYPES.financeDocs
+        };
+        this.imageDocument[6] = {
+            id: 6,
+            personaId: 1,
+            name: "",
+            text: "",
+            documentId:5,
+            url: "../images/1/docs/6.png"
+        };
+
+
 
         this.lastId = 24;
     },
@@ -376,7 +561,11 @@ Backbone.sync = function (method, model, options) {
                 resp = model.id ? store.find(model, "foundations") : store.findAll("foundations");
             } else if (model instanceof advertCollection) {
                 resp = model.id ? store.find(model, "advert") : store.findAll("advert");
-            } else {
+            } else if (model instanceof documentCollection) {
+                resp = model.id ? store.find(model, "document") : store.findAll("document");
+            }else if (model instanceof imageDocumentCollection) {
+                resp = model.id ? store.find(model, "imageDocument") : store.findAll("imageDocument");
+            }else {
                 console.log(model)
             }
             // resp = model.id ? store.find(model) : store.findAll();

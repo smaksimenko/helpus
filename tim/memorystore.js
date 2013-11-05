@@ -416,6 +416,50 @@ window.store = {
             photo: false,
             advertType: ADVERT_TYPES.news
         };
+        this.advert[15] = {
+            id: 15,
+            actionDate: new Date(2013, 9, 28).getTime(),
+            addDate: new Date(2013, 10, 6).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "У БО 'СПАСИБО' от снятых на Тимошу ящиков из храмов есть <strong>3733</strong>. Эти деньги будут храниться на счету БО для Тимоши. Если они не понадобятся, то будут перечислены в помощь другому ребенку.",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[16] = {
+            id: 16,
+            actionDate: new Date(2013, 9, 31).getTime(),
+            addDate: new Date(2013, 10, 6).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Проинкассированы боксы БО 'Благовещение', поставленные для Тимошки Салтановского в Спасо-Преображенском соборе на <strong>6604 грн и 25$</strong>, в Храме Св. Виктора в Авангарде на <strong>4557 грн и 60$</strong>. Валюта передана родителям, гривны будут перечислены на счет. Спаси Господи благослови людей, которые не прошли мимо беды нашего Тимофея!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[17] = {
+            id: 17,
+            actionDate: new Date(2013, 9, 31).getTime(),
+            addDate: new Date(2013, 10, 6).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Была произведена инкассация копилочек от БФ 'Пчёлка',  сумма <strong>17 057 грн. ( с 44 копилок)</strong>. Большое спасибо руководителям и всему замечательному коллективу сети аптек 'Гаевского' и 'Фармации'!!! Сумма с копилок, пожертвования добрых людей и фонда составили <strong>32 943 грн.</strong> Итого: общая сумма,которая будет переведена в клинику БФ 'Пчёлка':  <strong>50 000 грн.</strong> Спасибо БФ ' Пчёлке'!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[18] = {
+            id: 18,
+            actionDate: new Date(2013, 10, 02).getTime(),
+            addDate: new Date(2013, 10, 6).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Вышел сюжет на телеканале канале 'ГЛАС'(Одесса), посмотреть его можно по ссылке <a href='http://glasweb.com/cpasibo-chto-zhivoy/'>http://glasweb.com/cpasibo-chto-zhivoy/</strong>",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
 
 
         this.document[1] ={

@@ -10,8 +10,8 @@ window.store = {
     social: {},
     foundations: {},
     advert: {},
-    document:{},
-    imageDocument:{},
+    document: {},
+    imageDocument: {},
 
     populate: function () {
 
@@ -92,7 +92,7 @@ window.store = {
             total: 120000,
             collected: 58628.35,
             toDate: new Date(2013, 9, 16).getTime()
-    };
+        };
         this.financeState[8] = {
             id: 8,
             personaId: 1,
@@ -270,7 +270,7 @@ window.store = {
         };
         this.advert[2] = {
             id: 2,
-            actionDate: new Date(2013, 9, 6, 12,0).getTime(),
+            actionDate: new Date(2013, 9, 6, 12, 0).getTime(),
             addDate: new Date(2013, 9, 4).getTime(),
             personaId: 1,
             caption: null,
@@ -417,8 +417,53 @@ window.store = {
             advertType: ADVERT_TYPES.news
         };
 
+        this.advert[15] = {
+            id: 15,
+            actionDate: new Date(2013, 9, 22).getTime(),
+            addDate: new Date(2013, 9, 22).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Была проинкассирована копилка, установленная родителями в Христианской Реформаторской Церкви, на сумму <strong>2 834 грн.</strong> Огромное спасибо всему приходу Церкви, которые поддержали сбор во спасение детской жизни!!!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[16] = {
+            id: 16,
+            actionDate: new Date(2013, 9, 22).getTime(),
+            addDate: new Date(2013, 9, 22).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Проинкассирована копилка с благотворительного 'Детского клоун-концерта для Тимошки' Корпорации клоунов 'Оранжевое настроения', проведенного 13.10.2013 - собрана сумма <strong>1 437 грн. и 20 $</strong> .",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[17] = {
+            id: 17,
+            actionDate: new Date(2013, 9, 24).getTime(),
+            addDate: new Date(2013, 9, 24).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Владислав Борисович Бурда,владелец сети 'Антошка', перечислил на Приват банк для Тимофея, <strong>40 000 грн.</strong> Спасибо Вам!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[18] = {
+            id: 18,
+            actionDate: new Date(2013, 9, 24).getTime(),
+            addDate: new Date(2013, 9, 24).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "На данный момент родители смогли обменять и положить на единый счет общей суммой: 96 294 евро",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
 
-        this.document[1] ={
+
+        this.document[1] = {
             id: 1,
             personaId: 1,
             name: "Паспорт матери",
@@ -430,10 +475,10 @@ window.store = {
             personaId: 1,
             name: "Паспорт",
             text: "",
-            documentId:1,
+            documentId: 1,
             url: "../images/1/docs/1.jpg"
         }
-        this.document[2] ={
+        this.document[2] = {
             id: 2,
             personaId: 1,
             name: "Свидетельство о рождении",
@@ -445,10 +490,10 @@ window.store = {
             personaId: 1,
             name: "Свидетельство о рождении",
             text: "",
-            documentId:2,
+            documentId: 2,
             url: "../images/1/docs/2.jpg"
         };
-        this.document[3] ={
+        this.document[3] = {
             id: 3,
             personaId: 1,
             name: "Выписка из истории болезни",
@@ -460,7 +505,7 @@ window.store = {
             personaId: 1,
             name: "",
             text: "",
-            documentId:3,
+            documentId: 3,
             url: "../images/1/docs/3.jpg"
         };
         this.imageDocument[4] = {
@@ -468,10 +513,10 @@ window.store = {
             personaId: 1,
             name: "",
             text: "",
-            documentId:3,
+            documentId: 3,
             url: "../images/1/docs/4.jpg"
         };
-        this.document[4] ={
+        this.document[4] = {
             id: 4,
             personaId: 1,
             name: "Счет из клиники",
@@ -483,10 +528,10 @@ window.store = {
             personaId: 1,
             name: "",
             text: "",
-            documentId:4,
+            documentId: 4,
             url: "../images/1/docs/5.jpg"
         };
-        this.document[5] ={
+        this.document[5] = {
             id: 5,
             personaId: 1,
             name: "Гарантия фонда Ein Herz fur Kinder",
@@ -498,10 +543,9 @@ window.store = {
             personaId: 1,
             name: "",
             text: "",
-            documentId:5,
+            documentId: 5,
             url: "../images/1/docs/6.png"
         };
-
 
 
         this.lastId = 24;
@@ -563,9 +607,9 @@ Backbone.sync = function (method, model, options) {
                 resp = model.id ? store.find(model, "advert") : store.findAll("advert");
             } else if (model instanceof documentCollection) {
                 resp = model.id ? store.find(model, "document") : store.findAll("document");
-            }else if (model instanceof imageDocumentCollection) {
+            } else if (model instanceof imageDocumentCollection) {
                 resp = model.id ? store.find(model, "imageDocument") : store.findAll("imageDocument");
-            }else {
+            } else {
                 console.log(model)
             }
             // resp = model.id ? store.find(model) : store.findAll();

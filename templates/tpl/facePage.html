@@ -1,0 +1,165 @@
+<div class="container frontBlock">
+    <div class="row">
+        <div class="col-md-5"><img src="/images/<%=persona.id%>/frontPage.jpg" class="img-responsive img-thumbnail"
+                                   alt="<%=persona.get('name')%>">
+            <a href="#help" id='helpAction' class="btn btn-danger pull-right"
+               style='margin-top: -50px; margin-right: 10px; position:relative; z-index:50000000'>Хочу помочь
+                сейчас!</a>
+            <script language='javascript'>
+//                $("#helpAction").popover({
+//                    html: true,
+//                    placement: "top",
+//                    trigger: 'hover',
+//                    content: '<strong>Россия:</strong> можно править отправить СМС на номер 3116 с текстом "meg&nbsp;9257102707&nbsp;сумма"'
+//                });
+//
+
+            </script>
+        </div>
+        <div class="col-md-7">
+            <div class="panel panel-primary">
+
+
+                <div class="panel-heading">
+                    <h2 class="panel-title"><strong><%=persona.get('name') + " " + persona.get('surname')%></strong>
+                    </h2></div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Родился:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%= $.datepicker.formatDate("d MM yy", new
+                            Date(persona.get('dateOfBirth')))%>
+                            года.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3  text-right"><strong>Живёт:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%= persona.get('livingCountry') + ", " +
+                            persona.get('livingPlace')%>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Диагноз:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%= persona.get('diagnosis')%></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Необходимое лечение</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <% treatmentCollection.each(function(treatment){%>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Тип лечения:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=window.treatmentNames[treatment.get('treatmentType')]%></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Место лечения:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=treatment.get('treatmentCountry')%> <% if
+                            (treatment.get('treatmentCity')){print(", " + treatment.get('treatmentCity'))} %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Клиника:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=treatment.get('treatmentPlace')%></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Дата начала:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=$.datepicker.formatDate("d MM yy", new
+                            Date(treatment.get('treatmentStart')))%>
+                            года.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 text-right"><strong>Стоимость:</strong></div>
+                        <div class="col-md-9 col-sm-9"><%=utils.formatNumber(treatment.get('treatmentPrice')) +
+                            window.CURRENCY.catalog[treatment.get('treatmentCurrency')].symbol %>
+                        </div>
+                    </div>
+                    <%})%>
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <%var lastFinance = financeStateCollection.models[financeStateCollection.length-1];
+                var lastFinanceCurrency = window.CURRENCY.catalog[lastFinance.get('currency')];
+                var left = (lastFinance.get('total') - lastFinance.get('collected'))<0?0:(lastFinance.get('total') - lastFinance.get('collected'));
+
+                var timeLeft = (treatmentCollection.models[0].get('treatmentStart') - new
+                Date().getTime())/(60*60*24*1000);
+                var popover="<table class='table'>";
+                    financeStateCollection.each(function(model){
+                        popover += "<tr><td>"+$.datepicker.formatDate("d/mm/yy", new Date(model.get('toDate')))+"</td><td>"+utils.formatNumber(model.get('collected'))+ " "+window.CURRENCY.catalog[model.get('currency')].symbol +"</td>";
+                        })
+                        popover +="</table>";
+
+                %>
+                <div class="panel-heading">
+                    <h3 class="panel-title">Всего нужно собрать: <strong><%= lastFinance.get('total') + " " +
+                        lastFinanceCurrency.symbol %></strong></h3>
+
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item text-warning" style='font-size: larger'>
+                        <span class="badge" style='font-size: larger'><%=utils.formatNumber(left) + " " + lastFinanceCurrency.symbol %></span>
+                        <strong>Осталось собрать:</strong>
+                    </li>
+                    <li class="list-group-item text-success" style='font-size: larger'>
+                        <span data-content="<%=popover%>" id="collectedBadge" class="badge"
+                              style='font-size: larger; cursor: help'><%=utils.formatNumber(lastFinance.get('collected'))+ " " +
+                                            lastFinanceCurrency.symbol%></span>
+                        <strong>Собрано на <%= $.datepicker.formatDate("d MM yy", new
+                            Date(lastFinance.get('toDate')))%>:</strong>
+                    </li>
+                    <script language="javascript">
+
+                        $("#collectedBadge").popover({
+                            html: true,
+                            placement: "left",
+                            trigger: 'hover',
+                            title: "История сбора"
+
+                        });
+                    </script>
+                    <li class="list-group-item text-danger" style='font-size: larger'>
+                        <span class="badge" style='font-size: larger'><%=Math.round(timeLeft)%></span>
+                        <strong>Осталось дней:</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div id='greeting'>
+
+            <div class="row well">
+                <%
+                var _colState = persona.get("collectionState");
+                    if (_colState != COLLECTION_STATE.opened){%>
+                        <div class="alert <%=COLLECTION_STATE_DATA[_colState].messageStyle%>">
+                            <span class="glyphicon glyphicon-pushpin"></span> <%=COLLECTION_STATE_DATA[_colState].message%></div>
+
+                <%}%>
+                <div class="alert alert-warning"><small><span class="glyphicon glyphicon-pushpin"></span> Текст обращения отредактирован волонтером Одесского форума (14.10.2013). Стилистика и орфография автора сохранена.</small>
+                </div>
+                <p>За первые 10 дней своей жизни Тимоша перенёс 3 операции, 48 дней реанимации...</p>
+                <p> В свои 11 месяцев мальчишка весит всего 5 кг 200 гр, кишечник ребенка практически не усваивает еду, поскольку рабочая его часть намного меньше необходимой, всего около 50 см. Малыш борется за жизнь изо всех сил, он многое пережил, но и впереди ребёнку предстоит перенести немало!</p>
+
+                <p>У украинских и российских врачей, которые неоднократно обследовали, консультировали и первыми операциями смогли спасти ребёнка, нет практики в лечении таких тяжёлых форм болезни Гиршпрунга, они только поддерживают ослабевший организм, поскольку оперировать возможно при весе не менее 10 кг, но ни технически, ни практически не удалось помочь Тимофею достичь этой массы тела на протяжении первого года. В дальнейшем из-за отставания в физических параметрах прогнозируется отставание и в других сферах развития и навыках.</p>
+
+                <p>Родители Тимофея - обычные люди, в семью которых вместе с рождением долгожданного ребеночка пришла БЕДА... За 10 месяцев борьбы за своего сыночка они истратили все сбережения и теперь того, что зарабатывает отец Тимошки, с трудом хватает на уход и лечение... Родные и близкие люди оказывают максимальную поддержку и помощь, но этого, к сожалению, недостаточно...</p>
+
+                <p>Тимофею не справиться без материальной помощи неравнодушных людей, ведь его жизнь оценили в 120 000 евро.
+                    Одна надежда на опыт и многолетнюю практику немецких врачей!</p>
+                <p>У каждого должен быть шанс быть счастливым и здоровым, у Тимоши этот шанс есть.
+                    Помогите победить этот страшный диагноз!!!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+COLLECTION_STATE.opened
+    COLLECTION_STATE_DATA.
+</script>

@@ -1,0 +1,14 @@
+﻿<% social.each(function(m){
+        print("<tr>");
+        print("<td>" + m.get('name') + "</td><td>");
+        %> <a href="<%=m.get('link')%>">
+        <%
+        if (m.get('alias')){
+            print(m.get('alias'))
+        } else {
+            print(m.get('link'))
+        }
+
+    print("</a></td></tr>")
+
+})  %>

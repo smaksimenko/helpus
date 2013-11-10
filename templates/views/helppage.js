@@ -22,9 +22,7 @@ window.helpPage = Backbone.View.extend({
             id = "#banksListRight";
         };
         _self.$el.find(id).append(new webmoneyDetailsPanel({coll: this.options.webmoney}).el);
-
     }
-
 })
 
 window.bankDetailsPanel = panelSuccess.extend({

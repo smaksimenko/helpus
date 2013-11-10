@@ -10,7 +10,8 @@ window.personaModel = Backbone.Model.extend({
         diagnosis: "",
         treatmentId: "",
         financeStateId: "",
-        collectionState: window.COLLECTION_STATE.preOpened
+        collectionState: COLLECTION_STATE.preOpened,
+        message: ""
     }
 })
 window.treatmentModel = Backbone.Model.extend({

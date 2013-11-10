@@ -2,12 +2,16 @@
 window.treatmentType = {
     surgery:0,
     prosthesis:1,
-    rehabilitation:2
+    rehabilitation:2,
+    spinalTransplantation: 3,
+    liverTransplantation: 4
 }
 window.treatmentNames = {
     0: "Операция",
     1: "Протезирование",
-    2: "Ребилитация"
+    2: "Ребилитация",
+    3: "Пересадка спинного мозга",
+    4: "Пересадка печени"
 }
 window.CURRENCY = {
    USD: 0,

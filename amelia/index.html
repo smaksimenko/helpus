@@ -11,6 +11,9 @@
 
 
     <meta charset="UTF-8" />
+    <script language="javascript">
+        window.personaId = 2;
+    </script>
     <script src='../lib/jquery2.js'></script>
     <script src='../lib/bootstrap/js/bootstrap.min.js'></script>
     <script src='../lib/jqdatepicker/js/jquery-ui-1.10.3.custom.min.js'></script>
@@ -24,20 +27,20 @@
     <script src='../lib/fancybox/jquery.fancybox.pack.js'></script>
 
 <!--Backbone models and views-->
-    <script src='./views/panelView.js?v=1.1'></script>
-    <script src='./enums.js?v=1.1'></script>
-    <script src='./views/navigation.js?v=1.1'></script>
-    <script src='./views/facepage.js?v=1.1'></script>
-    <script src='./views/helppage.js?v=1.1'></script>
-    <script src='./views/contactspage.js?v=1.1'></script>
-    <script src='./views/documentsPage.js?v=1.1'></script>
+    <script src='../templates/views/panelView.js?v=1.2'></script>
+    <script src='../templates/enums.js?v=1.2'></script>
+    <script src='../templates/views/navigation.js?v=1.2'></script>
+    <script src='../templates/views/facepage.js?v=1.2'></script>
+    <script src='../templates/views/helppage.js?v=1.2'></script>
+    <script src='../templates/views/contactspage.js?v=1.2'></script>
+    <script src='../templates/views/documentsPage.js?v=1.2'></script>
 
 
-    <script src='./models/persona.js?v=1.1'></script>
+    <script src='../templates/models/persona.js?v=1.2'></script>
 
-    <script src='_memorystore.js?v=1.1&m=1'></script>
-    <script src='./utils.js?v=1.1'></script>
-    <script src='./main.js?v=1.1'></script>
+    <script src='./memorystore.js?v=1.2&m=1'></script>
+    <script src='../templates/utils.js?v=1.2'></script>
+    <script src='../templates/main.js?v=1.2'></script>
 </head>
 <body>
 <div class='container' id='header'>
@@ -54,7 +57,7 @@
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
             try {
-                w.yaCounter22462120 = new Ya.Metrika({id:22462120,
+                w.yaCounter22877500 = new Ya.Metrika({id:22877500,
                     clickmap:true,
                     trackLinks:true,
                     accurateTrackBounce:true});
@@ -67,13 +70,14 @@
         s.type = "text/javascript";
         s.async = true;
         s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
+e 
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
         } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="//mc.yandex.ru/watch/22462120" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="//mc.yandex.ru/watch/22877500" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+
 </body>
 </html>

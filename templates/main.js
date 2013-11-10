@@ -26,12 +26,12 @@ var AppRouter = Backbone.Router.extend({
             isRTL: false};
 
 
-        window.personaId = 1
+
         this.persona = new personaModel({id: window.personaId});
         this.persona.fetch();
         $.datepicker.setDefaults($.datepicker.regional[ "ru" ]);
-        this.persona = new personaModel();
-        this.persona.set({id: window.personaId});
+        //this.persona = new personaModel();
+        //this.persona.set({id: window.personaId});
         var _self = this;
         this.persona.fetch({success: function () {
             _self.headerView = new navigation({model: _self.persona});

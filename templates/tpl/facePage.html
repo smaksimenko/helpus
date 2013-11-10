@@ -5,6 +5,9 @@
             <a href="#help" id='helpAction' class="btn btn-danger pull-right"
                style='margin-top: -50px; margin-right: 10px; position:relative; z-index:50000000'>Хочу помочь
                 сейчас!</a>
+            <%
+            var _colState = persona.get("collectionState");
+            if (_colState == COLLECTION_STATE.opened){%>
             <script language='javascript'>
                 $("#helpAction").popover({
                     html: true,
@@ -13,8 +16,8 @@
                     content: "<%=persona.get('helpNow')%>"
                 });
 
-
             </script>
+            <%}%>
         </div>
         <div class="col-md-7">
             <div class="panel panel-primary">
@@ -141,9 +144,11 @@
                         <div class="alert <%=COLLECTION_STATE_DATA[_colState].messageStyle%>">
                             <span class="glyphicon glyphicon-pushpin"></span> <%=COLLECTION_STATE_DATA[_colState].message%></div>
 
-                <%}%>
-                <div class="alert alert-warning"><small><span class="glyphicon glyphicon-pushpin"></span> Текст обращения отредактирован волонтером Одесского форума (14.10.2013). Стилистика и орфография автора сохранена.</small>
-                </div>
+                <%}
+                var _mComment = persona.get("messageComment");
+                if ( _mComment ){%>
+                <div class="alert alert-warning"><small><span class="glyphicon glyphicon-pushpin"></span> <%= _mComment %></small>
+                </div><%}%>
                 <%=persona.get("message")%>
             </div>
         </div>

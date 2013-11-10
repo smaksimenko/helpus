@@ -11,7 +11,9 @@ window.personaModel = Backbone.Model.extend({
         treatmentId: "",
         financeStateId: "",
         collectionState: COLLECTION_STATE.preOpened,
-        message: ""
+        message: "",
+        helpNow:"",
+        messageComment: null
     }
 })
 window.treatmentModel = Backbone.Model.extend({

@@ -204,101 +204,76 @@ window.store = {
             advertType: ADVERT_TYPES.action
         };
 
-//        this.advert[2] = {
-//            id: 2,
-//            actionDate: new Date(2013, 10, 03).getTime(),
-//            addDate: new Date(2013, 10, 6).getTime(),
-//            personaId: 1,
-//            caption: null,
-//            link: null,
-//            text: "С днем рождения малыш! Здоровья, здоровья и еще раз здоровья тебе!",
-//            photo: "19.jpg",
-//            advertType: ADVERT_TYPES.news
-//        };
 
 
         this.document[1] ={
             id: 1,
-            personaId: 1,
-            name: "Паспорт матери",
-            text: "Салтановская Олена Олеговна, родилась 20 апреля 1981 года, г. Одесса, Украина",
+            personaId: 2,
+            name: "Свидетельство о рождении",
+            text: "Слизкая Амелия Сергеевна, родилась 5-го февраля 2013 года в г. Одесса",
             documentType: DOCUMENTS_TYPES.mainDocs
         };
         this.imageDocument[1] = {
             id: 1,
-            personaId: 1,
-            name: "Паспорт",
+            personaId: 2,
+            name: "Свидетельство о рождении",
             text: "",
-            documentId:1,
-            url: "../images/1/docs/1.jpg"
-        }
+            documentId: 1,
+            url: "../images/2/docs/1.jpg"
+        };
         this.document[2] ={
             id: 2,
-            personaId: 1,
-            name: "Свидетельство о рождении",
-            text: "Салтановский Тимофей Максимович, родился 3-го ноября 2012 года в г. Одесса",
-            documentType: DOCUMENTS_TYPES.mainDocs
+            personaId: 2,
+            name: "Документ о инвалидности",
+            text: "",
+            documentType: DOCUMENTS_TYPES.medicalDocs
         };
         this.imageDocument[2] = {
             id: 2,
-            personaId: 1,
-            name: "Свидетельство о рождении",
+            personaId: 2,
+            name: "",
             text: "",
-            documentId:2,
-            url: "../images/1/docs/2.jpg"
+            documentId: 2,
+            url: "../images/2/docs/2.jpg"
         };
+
         this.document[3] ={
             id: 3,
-            personaId: 1,
-            name: "Выписка из истории болезни",
+            personaId: 2,
+            name: "Эпикриз",
             text: "",
             documentType: DOCUMENTS_TYPES.medicalDocs
         };
         this.imageDocument[3] = {
             id: 3,
-            personaId: 1,
+            personaId: 2,
             name: "",
             text: "",
             documentId:3,
-            url: "../images/1/docs/3.jpg"
+            url: "../images/2/docs/3.jpg"
         };
         this.imageDocument[4] = {
             id: 4,
-            personaId: 1,
+            personaId: 2,
             name: "",
             text: "",
             documentId:3,
-            url: "../images/1/docs/4.jpg"
+            url: "../images/2/docs/4.jpg"
         };
         this.document[4] ={
             id: 4,
-            personaId: 1,
-            name: "Счет из клиники",
-            text: "",
+            personaId: 2,
+            name: "Счет клиники Сент Люк",
+            text: "Сумма к оплате 103 000 евро НЕ включает в себя медикаменты поддержки, контроли, проживание и питание",
             documentType: DOCUMENTS_TYPES.financeDocs
         };
         this.imageDocument[5] = {
             id: 5,
-            personaId: 1,
+            personaId: 2,
             name: "",
             text: "",
             documentId:4,
-            url: "../images/1/docs/5.jpg"
-        };
-        this.document[5] ={
-            id: 5,
-            personaId: 1,
-            name: "Гарантия фонда Ein Herz fur Kinder",
-            text: "Немецкий фонд обязуется оплатить 10 000 евро на счет клиники про условии предоплаты 110 000 евро",
-            documentType: DOCUMENTS_TYPES.financeDocs
-        };
-        this.imageDocument[6] = {
-            id: 6,
-            personaId: 1,
-            name: "",
-            text: "",
-            documentId:5,
-            url: "../images/1/docs/6.png"
+            url: "../images/2/docs/5.jpg"
         };
 
 

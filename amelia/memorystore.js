@@ -59,6 +59,14 @@ window.store = {
             collected: 44634,
             toDate: new Date(2013, 10, 4).getTime()
         };
+        this.financeState[2] = {
+            id: 2,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected: 48719,
+            toDate: new Date(2013, 10, 7).getTime()
+        };
 
         this.financeBank[1] = {
             id: 1,
@@ -202,6 +210,17 @@ window.store = {
                 "Вопросы в ЛС или по телефонам: 063 06 42 245 или 096 38 96 208",
             photo: "1.jpg",
             advertType: ADVERT_TYPES.action
+        };
+        this.advert[2] = {
+            id: 2,
+            actionDate: new Date(2013, 10, 10).getTime(),
+            addDate: new Date(2013, 10, 11).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Выражаем огромную благодарность футбольному клубу 'Черноморец' за содействие в сборе средств на лечение Амелии! Также низкий поклон болельщикам, которые поддержали не только любимую команду, но и родителей малышки, оказавшихся в трудной ситуации. Отдельное спасибо группе инициативных волонтеров, собравших на вчерашнем футбольном матче <strong>12685 грн</strong>!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
         };
 
 

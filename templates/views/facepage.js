@@ -44,6 +44,9 @@ window.advertsView = Backbone.View.extend({
                 } else {
                     _panelBody = "<p>" + this.actions[_i].get('text') + "</p>"
                 }
+                if (this.actions[_i].get('link')){
+                    _panelBody += "<a href='"+this.actions[_i].get('link')+"'>Перейти к источнику</a>";
+                }
 
 
                 _self.$el.find("#advertsRow").append(new panelWarning({title: "Акции: " + date, body: _panelBody}).el)
@@ -64,6 +67,10 @@ window.advertsView = Backbone.View.extend({
                 } else {
                     _panelBody = "<p>" + this.news[_i].get('text') + "</p>"
                 }
+                if (this.news[_i].get('link')){
+                    _panelBody += "<a href='" + this.news[_i].get('link') +"'>Перейти к источнику</a>";
+                }
+
                 _self.$el.find("#advertsRow").append(new panelInfo({title: "Новости: " + date, body:_panelBody}).el)
             }
         } else {

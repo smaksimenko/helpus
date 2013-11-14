@@ -75,6 +75,14 @@ window.store = {
             collected: 48859,
             toDate: new Date(2013, 10, 9).getTime()
         };
+        this.financeState[4] = {
+            id: 4,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected: 50997,
+            toDate: new Date(2013, 10, 11).getTime()
+        };
 
         this.financeBank[1] = {
             id: 1,
@@ -253,6 +261,41 @@ this.advert[4] = {
             photo: false,
             advertType: ADVERT_TYPES.news
         };
+        this.advert[5] = {
+            id: 5,
+            actionDate: new Date(2013, 10, 20).getTime(),
+            addDate: new Date(2013, 10, 13).getTime(),
+            personaId: 1,
+            caption: "Фотосессия",
+            link: "https://vk.com/dobrovolskalusy_photo_odessa",
+            text: "Закажи фотосессию в осеннем парке и подари ребенку шанс на здоровую жизнь! Стоимость: 150грн. Продолжительность: 1 час." +
+                " По итогу фотосессии Вы получаете 10 обработанных фото + исходный материал. Все собранные деньги будут переданы семье Амелии! " +
+                "Людмила: 0630642245 или 0963896208",
+            photo: "5.jpg",
+            advertType: ADVERT_TYPES.action
+        };
+        this.advert[6] = {
+            id: 6,
+            actionDate: new Date(2013, 10, 12).getTime(),
+            addDate: new Date(2013, 10, 13).getTime(),
+            personaId: 1,
+            caption: "Фотосессия: результаты",
+            link: "https://vk.com/dobrovolskalusy_photo_odessa",
+            text: "Воскресная фотосессия принесла 1350 гривен в копилку Амелии.Деньги будут перечислены по окончанию проекта.",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[7] = {
+            id: 7,
+            actionDate: new Date(2013, 10, 24).getTime(),
+            addDate: new Date(2013, 10, 14).getTime(),
+            personaId: 1,
+            caption: "ВДД",
+            link: null,
+            text: "24 ноября на Соборной площади (Одесса), у стен Спасо-Преображенского собора для Амелии состоится благотворительная акция 'Время добрых дел' ",
+            photo: "7.jpg",
+            advertType: ADVERT_TYPES.action
+        };
 
 
         this.document[1] ={
@@ -324,6 +367,7 @@ this.advert[4] = {
             documentId:4,
             url: "../images/2/docs/5.jpg"
         };
+
 
 
 

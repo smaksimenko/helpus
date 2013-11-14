@@ -487,7 +487,17 @@ window.store = {
             photo: "19.jpg",
             advertType: ADVERT_TYPES.news
         };
-
+        this.advert[20] = {
+            id: 20,
+            actionDate: new Date(2013, 10, 13).getTime(),
+            addDate: new Date(2013, 10, 13).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Клиника наконец подтвердила поступление оплаты и визы выданы. Сегодня Тимофей вылетает в Германию и к 14.00 на нашему времени должен уже быть в клинике",
+            photo: "20.jpg",
+            advertType: ADVERT_TYPES.news
+        };
 
         this.document[1] ={
             id: 1,

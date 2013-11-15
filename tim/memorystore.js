@@ -498,7 +498,17 @@ window.store = {
             photo: "20.jpg",
             advertType: ADVERT_TYPES.news
         };
-
+        this.advert[21] = {
+            id: 21,
+            actionDate: new Date(2013, 10, 14).getTime(),
+            addDate: new Date(2013, 10, 14).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "После очень тяжелого перелета, Тимофей наконец оказался в клинике. Начался сбор анализов и, надеемся, скоро будет уже лечение.",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
         this.document[1] ={
             id: 1,
             personaId: 1,

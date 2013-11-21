@@ -91,6 +91,46 @@ window.store = {
             collected: 54792,
             toDate: new Date(2013, 10, 13).getTime()
         };
+        this.financeState[6] = {
+            id: 6,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected: 58072,
+            toDate: new Date(2013, 10, 14).getTime()
+        };
+        this.financeState[7] = {
+            id: 7,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected:  61490,
+            toDate: new Date(2013, 10, 15).getTime()
+        };
+        this.financeState[8] = {
+            id: 8,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected:  65396,
+            toDate: new Date(2013, 10, 17).getTime()
+        };
+        this.financeState[9] = {
+            id: 9,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected:  70171,
+            toDate: new Date(2013, 10, 19).getTime()
+        };
+        this.financeState[10] = {
+            id: 10,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected:  74181,
+            toDate: new Date(2013, 10, 20).getTime()
+        };
 
         this.financeBank[1] = {
             id: 1,
@@ -217,6 +257,13 @@ window.store = {
             link: "http://blagovest.od.ua/actual/209-ameliya-slizkaya-billiarnaya-atreziya.html",
             alias: "Перейти на сайт"
         };
+        this.foundations[4] = {
+            id: 4,
+            personaId: 2,
+            name: "Благотворительный фонд 'Пчелка'",
+            link: "http://www.pchelka.ua/kids/slizkaya-ameliya",
+            alias: "Перейти на сайт"
+        };
         this.advert[1] = {
             id: 1,
             actionDate: new Date(2013, 10, 10).getTime(),
@@ -302,6 +349,17 @@ this.advert[4] = {
             link: null,
             text: "24 ноября на Соборной площади (Одесса), у стен Спасо-Преображенского собора для Амелии состоится благотворительная акция 'Время добрых дел' ",
             photo: "7.jpg",
+            advertType: ADVERT_TYPES.action
+        };
+        this.advert[8] = {
+            id: 8,
+            actionDate: new Date(2013, 10, 24).getTime(),
+            addDate: new Date(2013, 10, 21).getTime(),
+            personaId: 1,
+            caption: "Хамовый праздник",
+            link: null,
+            text: "24 ноября в поселке Авангард пройдет Благотворительная ярмарка для Амелии. Ярмарка состоится возле храма. Будет храмовый праздник! Приглашаем всех местных жителей принять участие!",
+            photo: false,
             advertType: ADVERT_TYPES.action
         };
 

@@ -51,6 +51,7 @@ window.store = {
             treatmentCurrency: 1,
             treatmentStart: new Date(2013, 10, 25).getTime()
         };
+
         this.financeState[1] = {
             id: 1,
             personaId: 2,
@@ -130,6 +131,14 @@ window.store = {
             total: 120500,
             collected:  74181,
             toDate: new Date(2013, 10, 20).getTime()
+        };
+        this.financeState[11] = {
+            id: 11,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected:  88815,
+            toDate: new Date(2013, 10, 26).getTime()
         };
 
         this.financeBank[1] = {
@@ -361,6 +370,41 @@ this.advert[4] = {
             text: "24 ноября в поселке Авангард пройдет Благотворительная ярмарка для Амелии. Ярмарка состоится возле храма. Будет храмовый праздник! Приглашаем всех местных жителей принять участие!",
             photo: false,
             advertType: ADVERT_TYPES.action
+        };
+
+  this.advert[9] = {
+            id: 9,
+            actionDate: new Date(2013, 10, 25).getTime(),
+            addDate: new Date(2013, 10, 25).getTime(),
+            personaId: 1,
+            caption: "ВДД",
+            link: null,
+            text: '24/11/2013 "Время Добрых Дел" с помощью неравнодушных одесситов, возле Спасо-Преображенского кафедрального собора собрали 9000 гривен для Амелии. Все собраные деньги переданы папе в конце акции.',
+            photo: "9.jpg",
+            advertType: ADVERT_TYPES.news
+        };
+
+        this.advert[10] = {
+            id: 10,
+            actionDate: new Date(2013, 10, 25).getTime(),
+            addDate: new Date(2013, 10, 25).getTime(),
+            personaId: 1,
+            caption: "Хамовый праздник",
+            link: "http://blagovest.od.ua/actual/209-ameliya-slizkaya-billiarnaya-atreziya.html",
+            text: "24 ноября в пгт Авангард прошла благотворительная ярмарка, результатом которой стали <strong>5 114 грн и 36 долларов</strong> для Амелии Слизкой. Искренне благодарим настоятеля храма о.Петра и всех прихожан, гостей храма св. мч. Виктора и мчц.Ирины, которые не остались равнодушными к беде маленькой Амельки и пожертвовали посильную для каждого сумму.",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[11] = {
+            id: 11,
+            actionDate: new Date(2013, 10, 26).getTime(),
+            addDate: new Date(2013, 10, 26).getTime(),
+            personaId: 1,
+            caption: "Спасибо!",
+            link: null,
+            text: "У нас замечательные, просто потрясающие новости! У нашей малышки появился ВОЛШЕБНИК! Сегодня у нашего администратора состоялась встреча с этим волшебником, итог этой встречи: +1 миллион рублей на счет нашей принцессы!!! Сумма уже переведена в евро и положена на евровый счет для оплаты клиники! Отчет готовится. Человек, сделавший такое крупное пожертвование, пожелал остаться неизвестным. Мы уважаем это решение, хоть нам и очень хочется всем-всем рассказать об этом невероятном поступке! Спасибо Вам огромное, добрейшей души Волшебник! Пусть Господь благословит Вас и вашу семью!",
+            photo: "11.jpg",
+            advertType: ADVERT_TYPES.news
         };
 
 

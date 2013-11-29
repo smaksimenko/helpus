@@ -138,9 +138,16 @@ window.store = {
             currency: 1,
             total: 120500,
             collected:  88815,
+            toDate: new Date(2013, 10, 24).getTime()
+        };
+        this.financeState[12] = {
+            id: 12,
+            personaId: 2,
+            currency: 1,
+            total: 120500,
+            collected:  115596,
             toDate: new Date(2013, 10, 26).getTime()
         };
-
         this.financeBank[1] = {
             id: 1,
             forCountry: "Украина",

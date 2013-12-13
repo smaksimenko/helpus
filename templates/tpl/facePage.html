@@ -126,7 +126,7 @@
                         });
                     </script>
                     <li class="list-group-item text-danger" style='font-size: larger'>
-                        <span class="badge" style='font-size: larger'><%=Math.round(timeLeft)%></span>
+                        <span class="badge" style='font-size: larger'><% if (persona.get("collectionState")==COLLECTION_STATE.finished&&timeLeft<0){print(0)}else{print(Math.round(timeLeft))} %></span>
                         <strong>Осталось дней:</strong>
                     </li>
                 </ul>

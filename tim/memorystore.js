@@ -520,6 +520,17 @@ window.store = {
             photo: "22.jpg",
             advertType: ADVERT_TYPES.news
         };
+        this.advert[23] = {
+            id: 23,
+            actionDate: new Date(2012, 10, 2).getTime(),
+            addDate: new Date(2012, 10, 2).getTime(),
+            personaId: 1,
+            caption: null,
+            link: null,
+            text: "Тимофею вшили долгосрочный катетер, сделали гастроскопию (всё нормально) и колоноскопию. Взяли частичку толстой кишки на анализ, ещё раз проверить, прежде чем удалять. Исследования будут делать в Швейцарии и через 3 недели должен быть ответ",
+            photo: "23.jpg",
+            advertType: ADVERT_TYPES.news
+        };
         this.document[1] ={
             id: 1,
             personaId: 1,

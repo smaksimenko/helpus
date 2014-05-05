@@ -388,6 +388,18 @@ window.store = {
 //            url: "../images/2/docs/8.jpg"
 //        };
 
+        this.advert[1] = {
+            id: 1,
+            actionDate: new Date(2014, 3, 30).getTime(),
+            addDate: new Date(2014, 3, 30).getTime(),
+            personaId: 1,
+            caption: null,
+            link: "http://ru.tsn.ua/dopomoga/malenkiy-dalimir-nuzhdaetsya-v-pomoschi-362988.html",
+            text: "Информацию о Далимире разместили на ТСН! Огромнейшее спасибо ТСН и каналу 1+1 за размещение, а также огромное спасибо всем, кто нам помог в размещении!!!!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
         this.lastId = 24;
     },
 

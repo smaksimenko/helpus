@@ -102,6 +102,14 @@ window.store = {
             collected: 11614.35,
             toDate: new Date(2014, 3, 25).getTime()
         };
+        this.financeState[6] = {
+            id: 6,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 12580.49,
+            toDate: new Date(2014, 4, 3).getTime()
+        };
 
         this.financeBank[1] = {
             id: 1,
@@ -117,7 +125,19 @@ window.store = {
             comment: "Возможен перевод прямо на карту в терминалах ПриватБанка"
         };
 
-
+        this.financeBank[2] = {
+            id: 2,
+            forCountry: "Россия",
+            name: "Сбербанк России",
+            organisation: "Сбербанк России",
+            // MFO: 305299,
+            //OKPO: 14360570,
+            accountNumber: null,
+            target: "№ карты Maestro 63900249 9010424759 Дроздова Юлия Александровна",
+            cardNumber: 639002499010424759 ,
+            currency: window.CURRENCY.RUR,
+            comment: null
+        };
 
         this.webmoney[1] = {
             id: 1,
@@ -247,7 +267,7 @@ window.store = {
         this.document[3] ={
             id: 3,
             personaId: 3,
-            name: "Обследование МРТ",
+            name: "Обследование МРТ 06.03.2014 (повторное)",
             text: "Вероятный диагноз: краниофарингиома",
             documentType: DOCUMENTS_TYPES.medicalDocs
         };
@@ -258,6 +278,59 @@ window.store = {
             text: "",
             documentId: 3,
             url: "../images/3/docs/4.jpg"
+        };
+        this.document[4] ={
+            id: 4,
+            personaId: 3,
+            name: "Апостиль инвойса Шарите",
+            text: "",
+            documentType: DOCUMENTS_TYPES.financeDocs
+        };
+        this.imageDocument[5] = {
+            id: 5,
+            personaId: 3,
+            name: "Стр 1",
+            text: "",
+            documentId: 4,
+            url: "../images/3/docs/5.jpg"
+        };
+        this.imageDocument[6] = {
+            id: 6,
+            personaId: 3,
+            name: "Стр 2",
+            text: "",
+            documentId: 4,
+            url: "../images/3/docs/6.jpg"
+        };
+        this.document[5] ={
+            id: 5,
+            personaId: 3,
+            name: "Диагноз",
+            text: "Рекомендация на операционное удаление опухоли в головном мозге. Институт Нейрохирургии г. Киев 27.11.2013г.",
+            documentType: DOCUMENTS_TYPES.medicalDocs
+        };
+        this.imageDocument[7] = {
+            id: 7,
+            personaId: 3,
+            name: "",
+            text: "",
+            documentId: 5,
+            url: "../images/3/docs/7.jpg"
+        };
+        this.document[6] ={
+            id: 6,
+            personaId: 3,
+            name: "Диагноз",
+            text: "МРТ головного мозга, Институт Нейрохирургии г.Киев 27.11.2013",
+            documentType: DOCUMENTS_TYPES.medicalDocs
+        };
+        this.imageDocument[8] = {
+            id: 8,
+            personaId: 3,
+            name: "",
+            text: "",
+            documentId: 6,
+            url: "../images/3/docs/8.jpg"
         };
 
 //        this.imageDocument[4] = {

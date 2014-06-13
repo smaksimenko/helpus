@@ -111,6 +111,40 @@ window.store = {
             toDate: new Date(2014, 4, 3).getTime()
         };
 
+        this.financeState[7] = {
+            id: 7,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 13932.49,
+            toDate: new Date(2014, 4, 9).getTime()
+        };
+        this.financeState[8] = {
+            id: 8,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 15285,
+            toDate: new Date(2014, 4, 16).getTime()
+        };
+        this.financeState[9] = {
+            id: 9,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 17335,
+            toDate: new Date(2014, 4, 23).getTime()
+        };
+        this.financeState[10] = {
+            id: 10,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 21208,
+            toDate: new Date(2014, 5, 6).getTime()
+        };
+
+
         this.financeBank[1] = {
             id: 1,
             forCountry: "Украина",
@@ -173,6 +207,11 @@ window.store = {
             id: 7,
             name: "PayPal",
             number: "helpmychildplease@gmail.com"
+        };
+        this.webmoney[7] = {
+            id: 8,
+            name: "Билайн",
+            number: "+7 966 791 34 01"
         };
 
         this.contact[1] = {
@@ -396,6 +435,64 @@ window.store = {
             caption: null,
             link: "http://ru.tsn.ua/dopomoga/malenkiy-dalimir-nuzhdaetsya-v-pomoschi-362988.html",
             text: "Информацию о Далимире разместили на ТСН! Огромнейшее спасибо ТСН и каналу 1+1 за размещение, а также огромное спасибо всем, кто нам помог в размещении!!!!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[2] = {
+            id: 2,
+            actionDate: new Date(2014, 4, 18).getTime(),
+            addDate: new Date(2014, 4, 7).getTime(),
+            personaId: 1,
+            caption: null,
+            link: "http://vk.com/event70574175",
+            text: "<p>Дорогие Одесситы, приглашаем Вас и Ваших близких на акцию 'Время Добрых Дел' у стен храма Св. Марии Магдалины по адресу: ул. Красные Зори, 4/б.</p><p> На акции, в благодарность за Ваши пожертвования мы угостим Вас домашней выпечкой, сделанной руками хозяюшек Одесского форума, а также вас ждет ярмарка изделий ручной работы</p>",
+            photo: "2.jpg",
+            advertType: ADVERT_TYPES.action
+        };
+        this.advert[3] = {
+            id: 3,
+            actionDate: new Date(2014, 4, 16).getTime(),
+            addDate: new Date(2014, 4, 16).getTime(),
+            personaId: 1,
+            caption: null,
+            link: false,
+            text: "Вчера прошла ярмарка в помощь Далимиру, участникам ВДД удалось собрать 9100 грн, 135$ и 50 евро. Огромное спасибо организаторам и участникам",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
+        this.advert[4] = {
+            id: 4,
+            actionDate: new Date(2014, 4, 31).getTime(),
+            addDate: new Date(2014, 4, 31).getTime(),
+            personaId: 1,
+            caption: null,
+            link: "https://www.youtube.com/watch?feature=player_embedded&v=uBOx8vSygC0",
+            text: "Далимир стал зведой Одесского ТВ, спасибо неравнодушным друзьям - на канале Град показали сюжет про Далимира",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[5] = {
+            id: 5,
+            actionDate: new Date(2014, 5, 1).getTime(),
+            addDate: new Date(2014, 5, 1).getTime(),
+            personaId: 1,
+            caption: null,
+            link: false,
+            text: "На день защиты детей ВДД провели очереную чудесную ярмарку. В результате было собрано 27082 грн, 320 $ и 20 евро! Всем огромное спасибо!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[6] = {
+            id: 6,
+            actionDate: new Date(2014, 5, 6).getTime(),
+            addDate: new Date(2014, 5, 6).getTime(),
+            personaId: 1,
+            caption: null,
+            link: false,
+            text: "Хотелось бы отдельно поблагодарить родителей и волонтеров Дани Шкурка, которые перевели деньги собранные сверх выставленного счета для Далимирки (14822 грн)." +
+                " Поистине, это очень трогательно, видеть, как родители больного ребенка, помогают таким же родителям. " +
+                "Спасибо Вам и низкий поклон! Пускай у Данечки, в самом ближайшем будущем все будет хорошо, и чтоб он кк можно быстрее выздоровел!",
             photo: false,
             advertType: ADVERT_TYPES.news
         };

@@ -23,7 +23,7 @@ window.store = {
             livingPlace: "Одесса",
             diagnosis: "Краниофарингиома (опухоль головного мозга), порок сердца",
             treatmentId: 1,
-            collectionState: COLLECTION_STATE.opened,
+            collectionState: COLLECTION_STATE.finished,
             message: "<p>В моей маленькой семье произошло чудо, я очень хотела ребенка и вот это случилось - я забеременела, и ощущения счастья не покидало меня, несмотря на разные трудности и огорчения. Отец ребенка, услышав о моей беременности, исчез в одночасье, но я его не виню - это мое счастье, мое солнце и мой малыш!</p>" +
                 "<p>Беременность протекала хорошо, но на восьмом месяце пошел какой-то сбой, и я легла на сохранение.</p>" +
                 "<p>После выписки я сразу уехала в роддом. Далимирчик родился 23.10.12 г. в Одессе здоровым ребенком, правда, с маленьким весом. Врачи сказали, что это не страшно, на первых месяцах набирал вес хорошо.</p>" +
@@ -143,7 +143,38 @@ window.store = {
             collected: 21208,
             toDate: new Date(2014, 5, 6).getTime()
         };
-
+        this.financeState[11] = {
+            id: 11,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 21329 ,
+            toDate: new Date(2014, 5, 13).getTime()
+        };
+        this.financeState[12] = {
+            id: 12,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 24372.84,
+            toDate: new Date(2014, 5, 27).getTime()
+        };
+        this.financeState[13] = {
+            id: 13,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 22489.84,
+            toDate: new Date(2014, 5, 20).getTime()
+        };
+        this.financeState[14] = {
+            id: 14,
+            personaId: 3,
+            currency: 1,
+            total: 38000,
+            collected: 26777.77,
+            toDate: new Date(2014, 6, 04).getTime()
+        };
 
         this.financeBank[1] = {
             id: 1,
@@ -371,6 +402,21 @@ window.store = {
             documentId: 6,
             url: "../images/3/docs/8.jpg"
         };
+        this.document[7] ={
+            id: 7,
+            personaId: 3,
+            name: "Гарантия фонда 'Ein Herz fur Kinder'",
+            text: "Немецкий фонд 'Ein Herz fur Kinder' гарантирует оплату 12420 евро на лечение Далимира",
+            documentType: DOCUMENTS_TYPES.financeDocs
+        };
+        this.imageDocument[9] = {
+            id: 9,
+            personaId: 3,
+            name: "",
+            text: "",
+            documentId: 7,
+            url: "../images/3/docs/9.jpg"
+        };
 
 //        this.imageDocument[4] = {
 //            id: 4,
@@ -496,6 +542,40 @@ window.store = {
             photo: false,
             advertType: ADVERT_TYPES.news
         };
+        this.advert[7] = {
+            id: 7,
+            actionDate: new Date(2014, 5, 12).getTime(),
+            addDate: new Date(2014, 5, 12).getTime(),
+            personaId: 1,
+            caption: null,
+            link: false,
+            text: "Немецкий фонд 'Ein Herz fur Kinder' дает нам гарантию, в которой обязуется перечислить клинике <b>12 420</b> евро после операции Далимира.!",
+            photo: "7.jpg",
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[8] = {
+            id: 8,
+            actionDate: new Date(2014, 6, 4).getTime(),
+            addDate: new Date(2014, 6, 4).getTime(),
+            personaId: 1,
+            caption: null,
+            link: false,
+            text: "Благотворительный фонд Пчелка перечислил 25 000 грн, таким образом, с учетом немецкой гарантии сбор закрыт!",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+        this.advert[9] = {
+            id: 9,
+            actionDate: new Date(2014, 6, 6).getTime(),
+            addDate: new Date(2014, 6, 6).getTime(),
+            personaId: 1,
+            caption: null,
+            link: false,
+            text: "Далимир с мамой уже в Берлине. Операция назначена на 11.07.2014",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
+
 
         this.lastId = 24;
     },

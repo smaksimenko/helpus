@@ -33,12 +33,13 @@ var AppRouter = Backbone.Router.extend({
         //this.persona = new personaModel();
         //this.persona.set({id: window.personaId});
         var _self = this;
+
         this.persona.fetch({success: function () {
             _self.headerView = new navigation({model: _self.persona});
             $('#header').html(_self.headerView.el);
             document.title = _self.persona.get("name") + " " + _self.persona.get("surname");
             //document.title;
-        }});
+        },error:function(){console.error("in error " + window.personaId);}});
 
     },
 

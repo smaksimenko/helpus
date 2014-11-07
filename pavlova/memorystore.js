@@ -14,16 +14,16 @@ window.store = {
     imageDocument:{},
 
     populate: function () {
-        this.persona[3] = {
+        this.persona[4] = {
             id: 4,
             name: "Даша",
             surname: "Павлова",
-            dateOfBirth: new Date(2012, 07, 18).getTime(),
+            dateOfBirth: new Date(2001, 07, 18).getTime(),
             livingCountry: "Украина",
             livingPlace: "Одесса",
-            diagnosis: "Краниофарингиома (опухоль головного мозга), порок сердца",
+            diagnosis: "Сколиоз 4 степени, факоматоз, левосторонняя кривошея и остеофиброзная дисплазия(состояние после аллопластики)",
             treatmentId: 1,
-            collectionState: COLLECTION_STATE.opened,
+            collectionState: COLLECTION_STATE.finished,
             message: "<p>Здравствуйте! Меня зовут Марина Павлова. </p>"+
                 "<p>Я долго думала, как же начать нашу историю...Наверно начну как и все мамы, с самого первого дня.</p>"+
                 "<p>Итак: Теплым августовским вечером 2001 года появилась на свет девочка, с сильным именем- Дарья.</p>"+
@@ -64,7 +64,7 @@ window.store = {
                 "<p>Мы очень просим помощи у добрых людей-<b>ПОМОГИТЕ ДАШЕНЬКЕ СТАТЬ ЗДОРОВОЙ!</b></p>"+
                 "<p>ПРОСИМ ВАШИХ МОЛИТВ О ЗДРАВИИ ДАШЕНЬКИ!</p>"+
                 "<p>Заранее спасибо всем!!!</p>",
-                helpNow: "" ,
+                helpNow: "Билайн +7 961 715 49 20" ,
             messageComment: "Автор сообщения мама Даши - Марина. Стилистика и орфография автора сохранена."
         };
         this.treatment[1] = {
@@ -72,9 +72,9 @@ window.store = {
             personaId: 4,
             treatmentType: window.treatmentType.surgery,
             treatmentCountry: "Германия",
-            treatmentCity: "Берлин",
+            treatmentCity: "Штутгарт",
             treatmentPlace: "Esslingen",
-            treatmentPrice: 64798,
+            treatmentPrice:  61518,
             treatmentCurrency: 1,
             treatmentStart: new Date(2014, 09, 07).getTime()
         };
@@ -88,8 +88,151 @@ window.store = {
             toDate: new Date(2014, 6, 10).getTime()
         };
 
+        this.financeState[2] = {
+            id: 2,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 42693,
+            toDate: new Date(2014, 6, 12).getTime()
+        };
 
-
+        this.financeState[3] = {
+            id: 3,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 42752,
+            toDate: new Date(2014, 6, 13).getTime()
+        };
+        this.financeState[4] = {
+            id: 4,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 42793,
+            toDate: new Date(2014, 6, 14).getTime()
+        };
+        this.financeState[5] = {
+            id: 5,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 42956,
+            toDate: new Date(2014, 6, 15).getTime()
+        };
+        this.financeState[6] = {
+            id: 6,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 43022,
+            toDate: new Date(2014, 6, 16).getTime()
+        };
+        this.financeState[7] = {
+            id: 7,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 43056,
+            toDate: new Date(2014, 6, 17).getTime()
+        };
+        this.financeState[8] = {
+            id: 8,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 43761,
+            toDate: new Date(2014, 6, 20).getTime()
+        };
+        this.financeState[9] = {
+            id: 9,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 43979,
+            toDate: new Date(2014, 6, 23).getTime()
+        };
+        this.financeState[10] = {
+            id: 10,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 44108,
+            toDate: new Date(2014, 6, 24).getTime()
+        };
+        this.financeState[11] = {
+            id: 11,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected: 44180,
+            toDate: new Date(2014, 6, 27).getTime()
+        };
+        this.financeState[12] = {
+            id: 12,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected:  53165,
+            toDate: new Date(2014, 6, 29).getTime()
+        };
+        this.financeState[13] = {
+            id: 13,
+            personaId: 4,
+            currency: 1,
+            total: 64798,
+            collected:  53459,
+            toDate: new Date(2014, 6, 30).getTime()
+        };
+        this.financeState[14] = {
+            id: 14,
+            personaId: 4,
+            currency: 1,
+            total: 61518,
+            collected:  55112,
+            toDate: new Date(2014, 7, 4).getTime()
+        };
+        this.financeState[15] = {
+            id: 15,
+            personaId: 4,
+            currency: 1,
+            total: 61518,
+            collected:  56721,
+            toDate: new Date(2014, 7, 10).getTime()
+        };
+        this.financeState[16] = {
+            id: 16,
+            personaId: 4,
+            currency: 1,
+            total: 61518,
+            collected:  56767,
+            toDate: new Date(2014, 7, 11).getTime()
+        };
+        this.financeState[17] = {
+            id: 17,
+            personaId: 4,
+            currency: 1,
+            total: 61518,
+            collected:  57490,
+            toDate: new Date(2014, 7, 15).getTime()
+        };
+        this.financeState[18] = {
+            id: 18,
+            personaId: 4,
+            currency: 1,
+            total: 61518,
+            collected:  57868,
+            toDate: new Date(2014, 7, 16).getTime()
+        };
+        this.financeState[18] = {
+            id: 18,
+            personaId: 4,
+            currency: 1,
+            total: 61518,
+            collected:  61518,
+            toDate: new Date(2014, 7, 16).getTime()
+        };
         this.financeBank[1] = {
             id: 1,
             forCountry: "Украина",
@@ -106,390 +249,400 @@ window.store = {
 
         this.financeBank[2] = {
             id: 2,
-            forCountry: "Россия",
+            forCountry: "Украина",
             name: "Сбербанк России",
             organisation: "Сбербанк России",
             // MFO: 305299,
             //OKPO: 14360570,
             accountNumber: null,
-            target: "№ карты Maestro 63900249 9010424759 Дроздова Юлия Александровна",
-            cardNumber: 639002499010424759 ,
+            target: "№ карты   67619 6000 21195 7270  Павлов Сергей",
+            cardNumber: "676196000211957270",
             currency: window.CURRENCY.RUR,
             comment: null
         };
+//        this.financeBank[3] = {
+//            id: 3,
+//            forCountry: "Украина",
+//            name: "Сбербанк России",
+//            organisation: "Сбербанк России",
+//            // MFO: 305299,
+//            //OKPO: 14360570,
+//            accountNumber: 26203000767099,
+//            target: "Павлова Марина Валерьевна",
+//            //cardNumber: 676196000211957270 ,
+//            currency: window.CURRENCY.UAH,
+//            comment: null
+//        };
 
         this.webmoney[1] = {
             id: 1,
             name: "Webmoney",
-            number: "Z318141590898",
+            number: "Z199341864912",
             currency: window.CURRENCY.USD
         };
         this.webmoney[2] = {
             id: 2,
             name: "Webmoney",
-            number: "E457251904397",
+            number: "E467539175188",
             currency: window.CURRENCY.EUR
         };
         this.webmoney[3] = {
             id: 3,
             name: "Webmoney",
-            number: "R329085492314",
+            number: "R198299923381",
             currency: window.CURRENCY.RUR
         };
         this.webmoney[4] = {
             id: 4,
             name: "Webmoney",
-            number: "U271137732976",
+            number: "U264943567475",
             currency: window.CURRENCY.UAH
         };
+        this.webmoney[5] = {
+            id: 5,
+            name: "Webmoney",
+            number: "B779522524464",
+            currency: window.CURRENCY.BYR
+        };
+
 
         this.webmoney[6] = {
             id: 6,
             name: "QIWI - КОШЕЛЕК",
-            number: "+7 966 791 34 01"
+            number: "+380988844273"
         };
         this.webmoney[7] = {
             id: 7,
             name: "PayPal",
-            number: "helpmychildplease@gmail.com"
+            number: "a.deschner@mail.ru"
         };
-        this.webmoney[7] = {
+        this.webmoney[8] = {
             id: 8,
             name: "Билайн",
-            number: "+7 966 791 34 01"
+            number: "+7 961 715 49 20",
+            currency: window.CURRENCY.RUR
+        };
+        this.webmoney[9] = {
+            id: 9,
+            name: "Яндекс",
+            number: "410012001390078"
         };
 
         this.contact[1] = {
             id: 1,
-            personaId: 3,
-            name: "Ляшкевич Юлия",
+            personaId: 4,
+            name: "Павлова Марина",
             country: "Украина",
             city: "Одесса",
-            phone: "+3 093 456 60 62 ",
+            phone: "+3 063 725 57 70",
             relation: "мама"
         };
 
         this.social[1] = {
             id: 1,
-            personaId: 3,
+            personaId: 4,
             name: "вКонтакте",
-            link: "http://vk.com/club62803195"
+            link: "http://vk.com/pomogitespastidashu"
         };
         this.social[2] = {
             id: 2,
-            personaId: 3,
+            personaId: 4,
             name: "Одесский форум",
-            link: "http://forumodua.com/showthread.php?t=2267529&page=1"
+            link: "http://forumodua.com/showthread.php?t=2065160"
         };
         this.social[3] = {
             id: 3,
-            personaId: 3,
+            personaId: 4,
             name: "FaceBook",
-            link: "https://www.facebook.com/groups/378477915621953/"
+            link: "https://www.facebook.com/permalink.php?story_fbid=1508957002671602&id=1508239649410004"
         };
         this.social[4] = {
             id: 4,
-            personaId: 3,
+            personaId: 4,
             name: "Одноклассники",
-            link: "http://www.odnoklassniki.ru/group51771257913494"
+            link: "http://www.odnoklassniki.ru/vremennoza"
         };
-//        this.foundations[3] = {
-//            id: 3,
-//            personaId: 3,
-//            name: "Благотворительная организация 'Благовещение'",
-//            link: "http://blagovest.od.ua/actual/209-ameliya-slizkaya-billiarnaya-atreziya.html",
-//            alias: "Перейти на сайт"
-//        };
-//        this.foundations[4] = {
-//            id: 4,
-//            personaId: 3,
-//            name: "Благотворительный фонд 'Пчелка'",
-//            link: "http://www.pchelka.ua/kids/slizkaya-ameliya",
-//            alias: "Перейти на сайт"
-//        };
+        this.social[5] = {
+            id: 5,
+            personaId: 4,
+            name: "Кидстафф",
+            link: "http://www.kidstaff.com.ua/forum/viewtopic.php?t=59296"
+        };
+        this.foundations[1] = {
+            id: 1,
+            personaId: 4,
+            name: "Благотворительная организация 'Благовещение'",
+            link: "http://blagovest.od.ua/actual/208-dasha-pavlova-12-let-borby.html",
+            alias: "Перейти на сайт"
+        };
+        this.foundations[2] = {
+            id: 2,
+            personaId: 4,
+            name: "Благотворительная организация 'Спасибо'",
+            link: "http://spasibo.od.ua/%D0%BF%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B0-%D0%B4%D0%B0%D1%88%D0%B0-12-%D0%BB%D0%B5%D1%82-%D0%B2%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5-%D0%B3%D0%B5%D0%BD%D0%B5%D1%82%D0%B8%D1%87/",
+            alias: "Перейти на сайт"
+        };
+        this.foundations[3] = {
+            id: 3,
+            personaId: 4,
+            name: "Благотворительный фонд 'Пчелка'",
+            link: "http://www.pchelka.ua/ru/kids/pavlova-dasha",
+            alias: "Перейти на сайт"
+        };
+        this.foundations[4] = {
+            id: 4,
+            personaId: 4,
+            name: "Украинская биржа благотворительности",
+            link: "https://ubb.org.ua/ru/project/973/",
+            alias: "Перейти на сайт"
+        };
 
         this.document[1] ={
             id: 1,
             personaId: 3,
-            name: "Свидетельство о рождении",
-            text: "Ляшкевич Далимир Михайлович, родился 20-го ноября 2012 года в г. Одесса",
-            documentType: DOCUMENTS_TYPES.mainDocs
+            name: "Медицинское заключение ЦРБ",
+            text: "деформация позвоночника, левостороння кривошея, остеома лобно-темянного участка, состояние после краниопластики.",
+            documentType: DOCUMENTS_TYPES.medicalDocs
         };
         this.imageDocument[1] = {
             id: 1,
-            personaId: 3,
-            name: "Свидетельство о рождении",
+            personaId: 4,
+            name: "Заключение стр. 1",
             text: "",
             documentId: 1,
-            url: "../images/3/docs/1.jpg"
+            url: "../images/4/docs/1.jpg"
+        };
+        this.imageDocument[2] = {
+            id: 2,
+            personaId: 4,
+            name: "Заключение стр. 2",
+            text: "",
+            documentId: 1,
+            url: "../images/4/docs/2.jpg"
         };
 
         this.document[2] ={
             id: 2,
-            personaId: 3,
-            name: "Счет - Калькуляция затрат на лечение (Шарите) ",
+            personaId: 4,
+            name: "Выписка из медицинской карты клиника Охмадет",
             text: "",
-            documentType: DOCUMENTS_TYPES.financeDocs
-        };
-        this.imageDocument[2] = {
-            id: 2,
-            personaId: 3,
-            name: "",
-            text: "",
-            documentId:2,
-            url: "../images/3/docs/2.jpg"
+            documentType: DOCUMENTS_TYPES.medicalDocs
         };
         this.imageDocument[3] = {
             id: 3,
-            personaId: 3,
+            personaId: 4,
             name: "",
             text: "",
             documentId:2,
-            url: "../images/3/docs/3.jpg"
-        };
-
-        this.document[3] ={
-            id: 3,
-            personaId: 3,
-            name: "Обследование МРТ 06.03.2014 (повторное)",
-            text: "Вероятный диагноз: краниофарингиома",
-            documentType: DOCUMENTS_TYPES.medicalDocs
+            url: "../images/4/docs/3.jpg"
         };
         this.imageDocument[4] = {
             id: 4,
-            personaId: 3,
+            personaId: 4,
             name: "",
             text: "",
-            documentId: 3,
-            url: "../images/3/docs/4.jpg"
+            documentId:2,
+            url: "../images/4/docs/4.jpg"
         };
-        this.document[4] ={
-            id: 4,
-            personaId: 3,
-            name: "Апостиль инвойса Шарите",
-            text: "",
+        this.document[3] ={
+            id: 3,
+            personaId: 4,
+            name: "Калькуляция клиники Эсслинген",
+            text: "перевод калькуляции клиники Эсслинген",
             documentType: DOCUMENTS_TYPES.financeDocs
         };
         this.imageDocument[5] = {
             id: 5,
-            personaId: 3,
-            name: "Стр 1",
+            personaId: 4,
+            name: "стр 1",
             text: "",
-            documentId: 4,
-            url: "../images/3/docs/5.jpg"
+            documentId: 3,
+            url: "../images/4/docs/5.jpg"
         };
         this.imageDocument[6] = {
             id: 6,
-            personaId: 3,
-            name: "Стр 2",
+            personaId: 4,
+            name: "стр 2",
             text: "",
-            documentId: 4,
-            url: "../images/3/docs/6.jpg"
+            documentId: 3,
+            url: "../images/4/docs/6.jpg"
         };
-        this.document[5] ={
-            id: 5,
-            personaId: 3,
-            name: "Диагноз",
-            text: "Рекомендация на операционное удаление опухоли в головном мозге. Институт Нейрохирургии г. Киев 27.11.2013г.",
-            documentType: DOCUMENTS_TYPES.medicalDocs
+        this.document[4] ={
+            id: 4,
+            personaId: 4,
+            name: "Счет на услуги переводчиков",
+            text: "Сумма услуг 3 213 евро",
+            documentType: DOCUMENTS_TYPES.financeDocs
         };
         this.imageDocument[7] = {
             id: 7,
-            personaId: 3,
+            personaId: 4,
             name: "",
             text: "",
-            documentId: 5,
-            url: "../images/3/docs/7.jpg"
+            documentId: 4,
+            url: "../images/4/docs/7.jpg"
         };
-        this.document[6] ={
-            id: 6,
+
+        this.document[5] ={
+            id: 5,
             personaId: 3,
-            name: "Диагноз",
-            text: "МРТ головного мозга, Институт Нейрохирургии г.Киев 27.11.2013",
-            documentType: DOCUMENTS_TYPES.medicalDocs
+            name: "Счет клиники Esslingen (факс)",
+            text: "Сумма услуг: 56 804 евро",
+            documentType: DOCUMENTS_TYPES.financeDocs
         };
         this.imageDocument[8] = {
             id: 8,
-            personaId: 3,
+            personaId: 4,
             name: "",
             text: "",
-            documentId: 6,
-            url: "../images/3/docs/8.jpg"
+            documentId: 5,
+            url: "../images/4/docs/8.jpg"
         };
-        this.document[7] ={
-            id: 7,
-            personaId: 3,
-            name: "Гарантия фонда 'Ein Herz fur Kinder'",
-            text: "Немецкий фонд 'Ein Herz fur Kinder' гарантирует оплату 12420 евро на лечение Далимира",
-            documentType: DOCUMENTS_TYPES.financeDocs
+        this.document[6] ={
+            id: 6,
+            personaId: 4,
+            name: "План лечения",
+            text: "План лечения разработанный профессором Хармсом",
+            documentType: DOCUMENTS_TYPES.medicalDocs
         };
         this.imageDocument[9] = {
             id: 9,
-            personaId: 3,
+            personaId: 4,
+            name: "Шаг 1",
+            text: "",
+            documentId: 6,
+            url: "../images/4/docs/9.jpg"
+        };
+        this.imageDocument[10] = {
+            id: 10,
+            personaId: 4,
+            name: "Шаг 2",
+            text: "",
+            documentId: 6,
+            url: "../images/4/docs/10.jpg"
+        };
+        this.imageDocument[11] = {
+            id: 11,
+            personaId: 4,
+            name: "Шаг 3",
+            text: "",
+            documentId: 6,
+            url: "../images/4/docs/11.jpg"
+        };
+
+        this.document[7] ={
+            id: 7,
+            personaId: 4,
+            name: "Гарантия фонда 'Ein herz fur kinder'",
+            text: "Гарантия фонда 'Ein herz fur kinder' на 20 000 евро ",
+            documentType: DOCUMENTS_TYPES.financeDocs
+        };
+        this.imageDocument[12] = {
+            id: 12,
+            personaId: 4,
             name: "",
             text: "",
             documentId: 7,
-            url: "../images/3/docs/9.jpg"
+            url: "../images/4/docs/12.jpg"
+        };
+        this.document[8] ={
+            id: 8,
+            personaId: 4,
+            name: "Свидетельство о рождении",
+            text: "",
+            documentType: DOCUMENTS_TYPES.mainDocs
+        };
+        this.imageDocument[13] = {
+            id: 13,
+            personaId: 4,
+            name: "",
+            text: "",
+            documentId: 8,
+            url: "../images/4/docs/13.jpg"
+        };
+        this.document[9] ={
+            id: 9,
+            personaId: 4,
+            name: "Пенсионное удостоверение",
+            text: "",
+            documentType: DOCUMENTS_TYPES.mainDocs
+        };
+        this.imageDocument[14] = {
+            id: 14,
+            personaId: 4,
+            name: "",
+            text: "",
+            documentId: 9,
+            url: "../images/4/docs/14.jpg"
         };
 
-//        this.imageDocument[4] = {
-//            id: 4,
-//            personaId: 3,
-//            name: "",
-//            text: "",
-//            documentId:3,
-//            url: "../images/2/docs/4.jpg"
-//        };
-//        this.document[4] ={
-//            id: 4,
-//            personaId: 3,
-//            name: "Счет клиники Сент Люк",
-//            text: "Сумма к оплате 103 000 евро НЕ включает в себя медикаменты поддержки, контроли, проживание и питание",
-//            documentType: DOCUMENTS_TYPES.financeDocs
-//        };
-//        this.imageDocument[5] = {
-//            id: 5,
-//            personaId: 3,
-//            name: "",
-//            text: "",
-//            documentId:4,
-//            url: "../images/2/docs/5.jpg"
-//        };
-//        this.document[5] ={
-//            id: 5,
-//            personaId: 3,
-//            name: "Переводы",
-//            text: "Перевод денег из России от волонтера и из Одессы, от отца.",
-//            documentType: DOCUMENTS_TYPES.reportDocs
-//        };
-//        this.imageDocument[6] = {
-//            id: 6,
-//            personaId: 3,
-//            name: "",
-//            text: "",
-//            documentId:5,
-//            url: "../images/2/docs/6.jpg"
-//        };
-//        this.imageDocument[7] = {
-//            id: 7,
-//            personaId: 3,
-//            name: "",
-//            text: "",
-//            documentId:5,
-//            url: "../images/2/docs/7.jpg"
-//        };
-//        this.imageDocument[8] = {
-//            id: 8,
-//            personaId: 3,
-//            name: "",
-//            text: "",
-//            documentId:5,
-//            url: "../images/2/docs/8.jpg"
-//        };
 
         this.advert[1] = {
             id: 1,
-            actionDate: new Date(2014, 3, 30).getTime(),
-            addDate: new Date(2014, 3, 30).getTime(),
+            actionDate: new Date(2014, 6, 7).getTime(),
+            addDate: new Date(2014, 6, 7).getTime(),
             personaId: 1,
             caption: null,
-            link: "http://ru.tsn.ua/dopomoga/malenkiy-dalimir-nuzhdaetsya-v-pomoschi-362988.html",
-            text: "Информацию о Далимире разместили на ТСН! Огромнейшее спасибо ТСН и каналу 1+1 за размещение, а также огромное спасибо всем, кто нам помог в размещении!!!!",
-            photo: false,
+            link: false,
+            text: "Фонд 'Ein Herz fur Kinder' выделяет Дашуле на лечение 20 000 тысяч евро! Огромное спасибо тем, кто неустанно помогает Дашуле на ее нелегком пути к выздоровлению! ",
+            photo: "1.jpg",
             advertType: ADVERT_TYPES.news
         };
         this.advert[2] = {
             id: 2,
-            actionDate: new Date(2014, 4, 18).getTime(),
-            addDate: new Date(2014, 4, 7).getTime(),
-            personaId: 1,
+            actionDate: new Date(2014, 6, 21).getTime(),
+            addDate: new Date(2014, 6, 21).getTime(),
+            personaId: 4,
             caption: null,
-            link: "http://vk.com/event70574175",
-            text: "<p>Дорогие Одесситы, приглашаем Вас и Ваших близких на акцию 'Время Добрых Дел' у стен храма Св. Марии Магдалины по адресу: ул. Красные Зори, 4/б.</p><p> На акции, в благодарность за Ваши пожертвования мы угостим Вас домашней выпечкой, сделанной руками хозяюшек Одесского форума, а также вас ждет ярмарка изделий ручной работы</p>",
-            photo: "2.jpg",
-            advertType: ADVERT_TYPES.action
-        };
-        this.advert[3] = {
-            id: 3,
-            actionDate: new Date(2014, 4, 16).getTime(),
-            addDate: new Date(2014, 4, 16).getTime(),
-            personaId: 1,
-            caption: null,
-            link: false,
-            text: "Вчера прошла ярмарка в помощь Далимиру, участникам ВДД удалось собрать 9100 грн, 135$ и 50 евро. Огромное спасибо организаторам и участникам",
+            link: "https://ubb.org.ua/ru/project/973/#tabs-7",
+            text: "На Украинской Бирже Благотворительности по просьбе БО 'СПАСИБО' уменьшили сумму необходимую к сбору по той причине, что Даше осталось собрать 203 000 грн. При перерасчете получилось, что сумма сбора сейчас на УББ 348 156 грн. из которых уже собрано на УББ 145 356 грн.",
             photo: false,
             advertType: ADVERT_TYPES.news
         };
-
+        this.advert[3] = {
+            id: 3,
+            actionDate: new Date(2014, 6, 29).getTime(),
+            addDate: new Date(2014, 6, 29).getTime(),
+            personaId: 4,
+            caption: null,
+            link: "https://ubb.org.ua/ru/project/973/#tabs-7",
+            text: "Принято решение учитывать сумму сбора УББ в общей сумме - поэтому остаток сильно уменьшился за сегодня",
+            photo: false,
+            advertType: ADVERT_TYPES.news
+        };
         this.advert[4] = {
             id: 4,
-            actionDate: new Date(2014, 4, 31).getTime(),
-            addDate: new Date(2014, 4, 31).getTime(),
-            personaId: 1,
+            actionDate: new Date(2014, 6, 29).getTime(),
+            addDate: new Date(2014, 6, 29).getTime(),
+            personaId: 4,
             caption: null,
-            link: "https://www.youtube.com/watch?feature=player_embedded&v=uBOx8vSygC0",
-            text: "Далимир стал зведой Одесского ТВ, спасибо неравнодушным друзьям - на канале Град показали сюжет про Далимира",
+            link: false,
+            text: "Общая сумма сбора уменьшена в связи с пересмотром залоговой суммы для получения визы.",
             photo: false,
             advertType: ADVERT_TYPES.news
         };
         this.advert[5] = {
             id: 5,
-            actionDate: new Date(2014, 5, 1).getTime(),
-            addDate: new Date(2014, 5, 1).getTime(),
-            personaId: 1,
+            actionDate: new Date(2014, 7, 16).getTime(),
+            addDate: new Date(2014, 7, 16).getTime(),
+            personaId: 4,
             caption: null,
             link: false,
-            text: "На день защиты детей ВДД провели очереную чудесную ярмарку. В результате было собрано 27082 грн, 320 $ и 20 евро! Всем огромное спасибо!",
+            text: "Сбор закрыт благодаря ДОБРОЙ ВОЛШЕБНИЦЕ, которая сможет дать нашей Дашутке недостающую сумму!",
             photo: false,
             advertType: ADVERT_TYPES.news
         };
         this.advert[6] = {
             id: 6,
-            actionDate: new Date(2014, 5, 6).getTime(),
-            addDate: new Date(2014, 5, 6).getTime(),
-            personaId: 1,
+            actionDate: new Date(2014, 8, 19).getTime(),
+            addDate: new Date(2014, 8, 19).getTime(),
+            personaId: 4,
             caption: null,
             link: false,
-            text: "Хотелось бы отдельно поблагодарить родителей и волонтеров Дани Шкурка, которые перевели деньги собранные сверх выставленного счета для Далимирки (14822 грн)." +
-                " Поистине, это очень трогательно, видеть, как родители больного ребенка, помогают таким же родителям. " +
-                "Спасибо Вам и низкий поклон! Пускай у Данечки, в самом ближайшем будущем все будет хорошо, и чтоб он кк можно быстрее выздоровел!",
+            text: "Нового у нас к сожалению ничего нет. Пока все еще ждем оригинал счета. Переводчики говорят,что звонили в клинику и им тоже сказали,что надо подождать. Ну ничего, самое тяжелое мы уже прошли, а сейчас мы еще потерпим. Так как прошел уже месяц после закрытия сбора,то я надеюсь,что клиника вот вот уже пришлет документ) Набираемся терпения и ждем)",
             photo: false,
             advertType: ADVERT_TYPES.news
         };
-        this.advert[7] = {
-            id: 7,
-            actionDate: new Date(2014, 5, 12).getTime(),
-            addDate: new Date(2014, 5, 12).getTime(),
-            personaId: 1,
-            caption: null,
-            link: false,
-            text: "Немецкий фонд 'Ein Herz fur Kinder' дает нам гарантию, в которой обязуется перечислить клинике <b>12 420</b> евро после операции Далимира.!",
-            photo: "7.jpg",
-            advertType: ADVERT_TYPES.news
-        };
-        this.advert[8] = {
-            id: 8,
-            actionDate: new Date(2014, 6, 4).getTime(),
-            addDate: new Date(2014, 6, 4).getTime(),
-            personaId: 1,
-            caption: null,
-            link: false,
-            text: "Благотворительный фонд Пчелка перечислил 25 000 грн, таким образом, с учетом немецкой гарантии сбор закрыт!",
-            photo: false,
-            advertType: ADVERT_TYPES.news
-        };
-        this.advert[9] = {
-            id: 9,
-            actionDate: new Date(2014, 6, 6).getTime(),
-            addDate: new Date(2014, 6, 6).getTime(),
-            personaId: 1,
-            caption: null,
-            link: false,
-            text: "Далимир с мамой уже в Берлине. Операция назначена на 11.07.2014",
-            photo: false,
-            advertType: ADVERT_TYPES.news
-        };
-
 
         this.lastId = 24;
     },
